@@ -1,0 +1,60 @@
+
+@import url("https://use.fontawesome.com/releases/v6.4.0/css/all.css");
+
+:root {
+    --clr-gray: #4d565a;
+    --clr-darkGreen: rgb(218, 218, 220); 
+    --clr-green: #6a7823;
+  }
+  body {
+    font-family: Helvetica, sans-serif;
+  }
+footer {
+    background-color: var(--clr-gray);
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+
+li{
+    list-style: none;
+    padding-block: 0.2rem;
+    
+}
+ul{
+    padding: 0px;
+}
+
+li:hover, .hover:hover {
+    color: #57a95b;
+    cursor: pointer;
+}
+
+.ft-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-block: 1rem;
+  }
+
+.ft-main-item{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+  .socials {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+.socials li {
+  font-size: 1.5rem;
+}
+
+.footer-last{
+    padding-block: 1rem;
+    background-color: gray;
+    text-align: center;
+  }
