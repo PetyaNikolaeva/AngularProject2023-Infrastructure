@@ -1,17 +1,16 @@
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../../../assets/image/background.jpg);
-    background-size: cover;
+main{
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle, whitesmoke 60%, gray);
+  border: 3px solid #9db52a;
 
 }
 .register {
-    margin-top: 200px;
+    margin-block: 150px;
     display: flex;
-    height: 50vh;
-    width: 50vw;
+height: auto;
+    width: 55vw;
     display: flex;
     border: 1px solid black;
     border-radius: 20px;
@@ -34,42 +33,33 @@ body{
 }
 .panel-right {
  background-color: darkgray;
-  padding: 45px;
+ padding-inline: 30px;
+ padding-top: 40px;
   text-align: center;
     color: black;
 }
 
 .panel-right h2 {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 30px;
   font-style: italic;
  font-size: 40px;
 }
 
 .panel-right input {
-  font-family: Helvetica, sans-serif;
   outline: 0;
   background: whitesmoke;
   width: 90%;
   height: 50px;
   border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
+  padding: 0px;
+  margin-block: 10px;
   box-sizing: border-box;
   font-size: 14px;
   text-align: center;
 }
-.panel-right textarea {
-  border: 1px solid rgb(206, 206, 206);
-  width: 90%;
-  max-width: 99%;
-  min-width: 90%;
-  min-height: 50px;
-  margin-bottom: 14px;
-  background-color: rgb(242, 242, 242);
-}
+
 .panel-right button {
-  font-family: Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   outline: 0;
@@ -88,14 +78,17 @@ body{
   transform: rotateX(10deg);
   box-shadow: 0 15px 15px #4d565a;
 }
-
+.panel-right .error {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
 
 .panel-right .message {
-  margin: 15px 0 0;
   color: black;
   font-size: 17px;
 }
 .panel-right .message a {
     color: black;
   text-decoration: underline;
+  font-weight: 600;
 }

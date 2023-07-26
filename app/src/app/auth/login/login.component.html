@@ -1,3 +1,4 @@
+<main>
 <section class="login">
     <div class="panel panel-left">
 
@@ -5,13 +6,22 @@
     <div class="panel panel-right">
 
       <h2>Login</h2>
-      <form class="login-form">
-        <input type="text" name="email" id="email" placeholder="email" />
-        <input type="password" name="password" id="password" placeholder="password" />
-        <button type="submit">login</button>
+      <form class="login-form"[formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
+        <input formControlName="email" type="text" name="email"email required placeholder="Email" >
+        <ng-container *ngIf="loginFormGroup.get('email')?.touched && loginFormGroup.get('email')?.invalid">
+          <p class="error" *ngIf="loginFormGroup.get('email')?.errors?.['required']" class="error">Email is necessary!</p>
+          <p class="error" *ngIf="loginFormGroup.get('email')?.errors?.['pattern']" class="error">Invalid email!</p>
+        </ng-container>
+        <input formControlName="password" type="password" name="password" required placeholder="Password">
+        <ng-container *ngIf="loginFormGroup.get('password')?.touched && loginFormGroup.get('password')?.invalid">
+          <p class="error">Password must be at least 6 characters!</p>
+        </ng-container>
+        <p *ngIf="errors" class="server-error">{{errors}}</p>
+    <button class="login-form-btn" [disabled]="loginFormGroup.invalid">Login</button>
         <p class="message">
-          Not registered? <a href="#">Become a member</a>
+          Not registered? <a routerLink="/register">Register</a>
         </p>
       </form>
     </div>
   </section>
+</main>

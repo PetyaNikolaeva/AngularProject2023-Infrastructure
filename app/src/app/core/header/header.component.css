@@ -1,33 +1,41 @@
-:root {
-    --clr-gray: #4d565a;
-    --clr-darkGreen: #538f64; 
-    --clr-green: #6a7823;
-  }
+
+  @import url("https://use.fontawesome.com/releases/v6.4.0/css/all.css");
+
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
   body {
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Barlow', sans-serif;
   
   }
   
   
   header {
-    color: #538f64;
-    background-color: white;
+    color: rgba(245, 245, 245, 0.871);
+    background-color: #4d565a;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem;
+    flex-direction: row;
+    font-size: 26px;
   }
   
   nav {
     display: flex;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 80px;
     
   }
   
+  nav .header__nav, nav .header__auth {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+  }
+
   
   header .logo_img{
     height: 4rem;
@@ -38,34 +46,33 @@
     align-items: center;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 2px 2px 0px 0px rgba(83, 143, 100, 0.8);
+    box-shadow: 2px 2px 0px 0px rgba(232, 232, 232, 0.8);
   }
   
   
   .logo_link{
-    color: var(--clr-darkGreen);
+    color: rgba(245, 245, 245, 0.871);
     font-size: 2rem;
   }
-
   
-  nav a {
-    color: #538f64;
+  
+  nav .header__nav-link {
+    text-decoration: none;
+    color:rgba(245, 245, 245, 0.871);
     font-weight: 400;
   }
   
-  header a {
+  header .logo_link {
     padding: 0 10px;
     text-decoration: none;
   
   
   }
   
-  nav a:hover {
-    color: white;
+  nav .header__nav-link:hover, nav .header__nav-link:visited {
     text-decoration: underline;
-    background-color: var(--clr-green);
+    background-color: #9db52a;
     padding: .75rem 2rem;
   
   
   }
-  

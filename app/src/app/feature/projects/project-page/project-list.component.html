@@ -1,0 +1,16 @@
+
+<form class="searchbar-form" >
+    <input type="text"  name="search" id="search" placeholder="Search a project">
+<button><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+<section  class="project-section">
+    <div class="project-card" *ngFor="let project of projects">
+        <div class="img-wrapper"> 
+            <img src= {{project?.imageUrl}} class="project-card-img">
+        </div>
+        <p class="project-card-name">{{project?.projectName}}</p>
+        <span class="project-card-contractor">Contractor: {{project?.contractor}}</span>
+        <a class="project-card-details-link">Details</a>
+    </div>
+</section>

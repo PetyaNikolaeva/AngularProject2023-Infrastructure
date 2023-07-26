@@ -13,14 +13,13 @@ const apiUrl = environment.apiUrl;
 export class PostsService {
   constructor(private http: HttpClient, private authService: AuthService) {}
  
-  loadProjectList$(): Observable<IProjects[]> {
+  loadProjectList(): Observable<IProjects[]> {
     return this.http.get<IProjects[]>(`${apiUrl}/data/albums?sortBy=_createdOn%20desc`);
   }
 
  
- 
 
-addBook$(data: IProjects): Observable<IProjects> {
+addProject(data: IProjects): Observable<IProjects> {
   const headers = new HttpHeaders({
     'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
   });
@@ -28,11 +27,11 @@ addBook$(data: IProjects): Observable<IProjects> {
     return this.http.post<IProjects>(`${apiUrl}/data/albums`, data, { headers })
 
 }
-   getDetails$(projectId:string): Observable<IProjects> {
+   getDetails(projectId:string): Observable<IProjects> {
      return this.http.get<IProjects>(`${apiUrl}/data/albums/${projectId}`);
    }
  
-   editProject$(projectId : string, data : IProjects): Observable<IProjects> {
+   editProject(projectId : string, data : IProjects): Observable<IProjects> {
     const headers = new HttpHeaders({
       'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
     });
@@ -41,7 +40,7 @@ addBook$(data: IProjects): Observable<IProjects> {
 
    }
  
-   removeProject$(projectId : string) {
+   removeProject(projectId : string) {
     const headers = new HttpHeaders({
       'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
     });

@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NewsPageComponent } from './news-page/news-page.component';
-
+import { RouterModule } from '@angular/router';
+import { PagesRoutingModule } from './pages-routing.module';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { NewsPageComponent } from './news-page/news-page.component';
     NewsPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PagesRoutingModule,
+    RouterModule
   ]
 })
 export class PagesModule { }

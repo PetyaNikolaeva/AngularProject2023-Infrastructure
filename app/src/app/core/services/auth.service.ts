@@ -18,11 +18,11 @@ export class AuthService {
   }
 
 
-  register$(userData: {email: string, password: string}): Observable<IUser> {
+  register(userData: {email: string, password: string}): Observable<IUser> {
     return this.httpClient.post<IUser>(`${environment.apiUrl}/users/register`, userData)
   }
 
-  login$(userData: {email: string, password: string}): Observable<IUser> {
+  login(userData: {email: string, password: string}): Observable<IUser> {
     return this.httpClient.post<IUser>(`${environment.apiUrl}/users/login`, userData)
     .pipe(tap(user => {
       sessionStorage.setItem('email', user.email);
@@ -32,12 +32,12 @@ export class AuthService {
     }));
   }
 
-  logout$() { 
+  logout() { 
     this.currentUser = null;
     return this.httpClient.get(`${environment.apiUrl}/users/logout`)
   }
 
-  getProfile$() {
+  getProfile() {
     const token = sessionStorage.getItem('accessToken');
 
     if (token) {

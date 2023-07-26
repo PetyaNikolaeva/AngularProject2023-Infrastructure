@@ -1,18 +1,18 @@
 
 @import url("https://use.fontawesome.com/releases/v6.4.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --clr-gray: #4d565a;
-    --clr-darkGreen: rgb(218, 218, 220); 
-    --clr-green: #6a7823;
-  }
-  body {
-    font-family: Helvetica, sans-serif;
-  }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+
+}
 footer {
-    background-color: var(--clr-gray);
+    background-color: #4d565a;
     font-size: 1.2rem;
-    color: whitesmoke;
+    color: rgba(245, 245, 245, 0.871);
 }
 
 li{
@@ -25,7 +25,7 @@ ul{
 }
 
 li:hover, .hover:hover {
-    color: #57a95b;
+    color: #9db52a;
     cursor: pointer;
 }
 
