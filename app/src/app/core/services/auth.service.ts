@@ -41,9 +41,9 @@ export class AuthService {
     const token = sessionStorage.getItem('accessToken');
 
     if (token) {
-      return this.httpClient.get<IUser>(`${apiUrl}/users/profile`,{ headers: new HttpHeaders({ 'X-Authorization': token }) })
+      return this.httpClient.get<IUser>(`${apiUrl}/users/me`,{ headers: new HttpHeaders({ 'X-Authorization': token }) })
     } else {
-      return this.httpClient.get<IUser>(`${apiUrl}/users/profile`)
+      return this.httpClient.get<IUser>(`${apiUrl}/users/me`)
     }
   }
 }

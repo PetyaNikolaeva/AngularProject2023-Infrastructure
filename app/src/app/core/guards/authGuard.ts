@@ -33,6 +33,7 @@ export class AuthGuard implements CanActivate {
 
         case '/add-project': if (!isAuthenticated) redirectUser();
             break;
+            
         case '/my-projects': if (!isAuthenticated) redirectUser();
             break;
 

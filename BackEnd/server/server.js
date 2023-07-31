@@ -1426,11 +1426,13 @@
     users: {
       '35c62d76-8152-4626-8712-eeb96381bea8': {
         email: 'peter@abv.bg',
+        username: "G.P.GROUP",
         hashedPassword:
           '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
       '847ec027-f659-4086-8032-5173e2f9c93a': {
         email: 'john@abv.bg',
+        username: "Transport Infrastructure - GBS",
         hashedPassword:
           '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
@@ -1443,37 +1445,41 @@
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         projectName: 'Struma Motorway Lot 3.3',
         contractor: 'Transport Infrastructure - GBS',
-        imageUrl: '/images/strumaMotorway.jpg',
+        imageUrl1: 'https://gbs-bg.com/wp-content/uploads/2023/03/5-1024x531.jpg',
+        imageUrl2: 'https://gbs-bg.com/wp-content/uploads/2021/12/Struma_GBS_web_01-1024x682.jpg',
+        imageUrl3: 'https://gbs-bg.com/wp-content/uploads/2023/03/1-1024x576-1.jpg',
         release: '2018',
         location: 'Kresna Sandanski,  from km 397+000 to km 420+624',
         description: 'The total length of lot 3.3 of Struma motorway is 23.6 km. Two road junctions will be developed in the section between Kresna and Sandanski, including 25 large facilities (bridges over rivers Struma, Zlinska, Gradeshka, Potoka, Rechichka, Sandanska Bistritsa, Leshnichka), overpass over the Sofia (Kulata railway), 9 agricultural underpasses and overpasses, 4 recreation grounds, including toilets, etc.',
-        companyInfo: 'GBS is one of the largest construction groups in Bulgaria and Southeastern Europe.We specialise in the construction of energy, transport and water infrastructure, as well as residential, commercial and industrial construction projects.Our services span the entire life cycle of construction projects, from conceptualisation, planning, estimation and design, to construction, management, operation and maintenance.',
         _createdOn: 1617194210928,
       },
       '126777f5-3277-42ad-b874-76d043b069cb': {
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         projectName: 'Sofia Ring Road',
         contractor: 'Transport Infrastructure - GBS',
-        imageUrl: 'https://webnews.bg/uploads/images/15/1315/551315/768x432.jpg',
+        imageUrl1: 'https://webnews.bg/uploads/images/15/1315/551315/768x432.jpg',
+        imageUrl2: 'https://m.netinfo.bg/media/images/48200/48200319/991-ratio-iuzhna-dyga-okolovrysten-pyt-osvetlenie.jpg',
+        imageUrl3: 'https://i.ytimg.com/vi/zBjbzuNto_I/maxresdefault.jpg',
         release: '2021',
         location: 'Section of road II-18 from km 35 to km 41, Sofia',
-        description: 'Construction of 6 km of Sofia Ring Road II-18 in the section from road junction “Tsarigradsko shose” to road junction “Mladost”.',
-        companyInfo: 'GBS is one of the largest construction groups in Bulgaria and Southeastern Europe.We specialise in the construction of energy, transport and water infrastructure, as well as residential, commercial and industrial construction projects.Our services span the entire life cycle of construction projects, from conceptualisation, planning, estimation and design, to construction, management, operation and maintenance.',
         _createdOn: 1617194295474,
       },
       '136777f5-3277-42ad-b874-76d043b069cb': {
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         projectName: 'VITOSHA METRO STATION, SOFIA',
         contractor: 'G.P.GROUP',
-        imageUrl: "",
+        imageUrl1: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/%D0%9C%D0%B5%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F_%E2%80%9E%D0%92%D0%B8%D1%82%D0%BE%D1%88%D0%B0%E2%80%9C.jpg',
+        imageUrl2: 'https://www.metropolitan.bg/assets/resourceimages/1042/metro-vitosha-7.jpg',
+        imageUrl3: 'https://d1c4d7gnm6as1q.cloudfront.net/Pictures/2000xAny/5/0/9/14509_tn_bg-sofia-m2-vitosha-station-1.jpg',
         release: '2016',
-        location: 'Vitosha Metro station is located on the boulevard Cherni Vrah, between his intersections and the street Henrik Ibsen and the street Philip Kutev.',
+        location: 'Vitosha Metro station is located on the boulevard Cherni Vrah, between his intersections and the street Henrik Ibsen and the street Philip Kutev, Sofia',
         description: 'The project includes construction of a two-way metro tunnel and one metro station. The construction of most of the metro route was constructed under the New Austrian tunnelling method, and the metro station and a small section of the metro tunnel were built under the Milanese method.',
-        companyInfo: 'G.P. GROUP JSC is a construction company that covers a wide range of services related to the construction and maintenance of buildings, facilities and engineering infrastructure in the field of housing, public and industrial construction. The scope of activity of the company includes research and consulting in the field of real estates, construction, design, architecture and construction works in all spheres of construction, maintenance and repairs of buildings and facilities.',
         _createdOn: 1617194295480,
-      },
+      }, 
     },
+
     likes: {},
+    
   };
   var rules$1 = {
     users: {

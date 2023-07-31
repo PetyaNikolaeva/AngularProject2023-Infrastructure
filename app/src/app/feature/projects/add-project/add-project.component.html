@@ -1,1 +1,85 @@
-<p>add-project works!</p>
+<main>
+    <section class="section">
+        <h2 class="create-page-heading">ADD YOUR PROJECT</h2>
+        <form class="create-form" [formGroup]="createFormGroup" (ngSubmit)="handleCreateProject()">
+
+           <div class="create__container">
+            <label class="label">Project Name</label>
+            <input class="create_input" formControlName="projectName" type="text">
+            <ng-container
+                *ngIf="createFormGroup.get('projectName')?.touched && createFormGroup.get('projectName')?.invalid">
+                <p class="error"><i class="fa-solid fa-circle-xmark"></i>  Name must be minimum one characters!</p>
+            </ng-container>
+        </div>
+        <div class="create__container"> 
+            <label class="label">Contractor</label>
+            <input class="create_input" formControlName="contractor" type="text">
+            <ng-container
+                *ngIf="createFormGroup.get('contractor')?.touched && createFormGroup.get('contractor')?.invalid">
+                <p class="error"><i class="fa-solid fa-circle-xmark"></i>  Contractor must be minimum one characters!</p>
+            </ng-container>
+        </div>
+        <div class="create__container"> 
+            <label class="label">Release year</label>
+            <input class="create_input" formControlName="release" type="text">
+            <ng-container *ngIf="createFormGroup.get('release')?.touched && createFormGroup.get('release')?.invalid">
+                <p class="error"><i class="fa-solid fa-circle-xmark"></i>  Project must be between 1970 and 2023!</p>
+            </ng-container>
+        </div>
+        <div class="create__container"> 
+            <label class="label">Location</label>
+            <input class="create_input" formControlName="location" type="text">
+            <ng-container *ngIf="createFormGroup.get('location')?.touched && createFormGroup.get('location')?.invalid">
+                <p class="error"><i class="fa-solid fa-circle-xmark"></i>  Location must be minimum one characters!</p>
+            </ng-container>
+        </div>
+        <div class="create__container"> 
+            <label class="label">Description</label>
+            <textarea class="create_input" formControlName="description" type="text" rows="4" cols="50"></textarea>
+
+            <ng-container
+                *ngIf="createFormGroup.get('description')?.touched && createFormGroup.get('description')?.invalid">
+                <p class="error"><i class="fa-solid fa-circle-xmark"></i>  Description must be minimum 10 characters!</p>
+            </ng-container>
+        </div>
+
+        <div class="create__container"> 
+            <label class="label">Add image 1</label>
+            <input class="create_input" formControlName="imageUrl1" type="text">
+            <ng-container
+                *ngIf="createFormGroup.get('imageUrl1')?.touched && createFormGroup.get('imageUrl1')?.invalid">
+                <p class="error" *ngIf="createFormGroup.get('imageUrl1')?.errors?.['pattern']">Invalid URL, must start
+                    with
+                    HTTP/HTTPS</p>
+                <p class="error" *ngIf="createFormGroup.get('imageUrl1')?.errors?.['required']"><i class="fa-solid fa-circle-xmark"></i>  Image is required!</p>
+            </ng-container>
+
+            <label class="label">Add image 2</label>
+            <input class="create_input" formControlName="imageUrl2" type="text">
+            <ng-container
+                *ngIf="createFormGroup.get('imageUrl2')?.touched && createFormGroup.get('imageUrl2')?.invalid">
+                <p class="error" *ngIf="createFormGroup.get('imageUrl2')?.errors?.['pattern']">Invalid URL, must start
+                    with
+                    HTTP/HTTPS</p>
+                <p class="error" *ngIf="createFormGroup.get('imageUrl2')?.errors?.['required']"><i class="fa-solid fa-circle-xmark"></i>  Image is required!</p>
+            </ng-container>
+
+            <label class="label">Add image 3</label>
+            <input class="create_input" formControlName="imageUrl3" type="text">
+            <ng-container
+                *ngIf="createFormGroup.get('imageUrl3')?.touched && createFormGroup.get('imageUrl3')?.invalid">
+                <p class="error" *ngIf="createFormGroup.get('imageUrl3')?.errors?.['pattern']">Invalid URL, must start
+                    with
+                    HTTP/HTTPS</p>
+                <p class="error" *ngIf="createFormGroup.get('imageUrl3')?.errors?.['required']">Image is required!</p>
+            </ng-container>
+        </div>
+            <p *ngIf="errorMessage" class="server-error">{{errorMessage}}</p>
+
+            <button class="create-form-btn" [disabled]="createFormGroup.invalid">Create</button>
+        
+
+  
+        </form>
+    </section>
+</main>

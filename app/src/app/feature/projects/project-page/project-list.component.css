@@ -1,60 +1,78 @@
+main {
+  border-block: 2px solid #9db52a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(rgba(245, 245, 245, 0.871),#4d565a ) 
+}
 .searchbar-form {
-  width: 80%;
-  margin: 10rem auto 0;
+  margin-block: 50px;
   display: flex;
   justify-content: center;
 }
 
 .searchbar-form input {
-  width: 30%;
-  font-size: 30px;
-  margin-right: 1rem;
-  border: none;
-  border-radius: 20px;
-  padding: 4px 0 4px 15px;
+  background-color: rgba(245, 245, 245, 0.871);
+  font-size: 22px;
+  width: 20%;
+  border: 2px solid #4d565a;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 .searchbar-form button {
   border: none;
   background-color: unset;
   font-size: 32px;
-  color: white;
+  color: rgba(245, 245, 245, 0.871);
   cursor: pointer;
 }
 
 .searchbar-form button:hover {
-  color: dodgerblue;
+  color: lightgray;
+}
+
+.searchbar-form input:hover {
+  background-color: lightgray;
+  color: black;
 }
 
 .project-section {
-  margin: 10rem auto;
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(4, 300px);
-  gap: 7.2rem;
+  margin-inline: 80px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .project-card {
-  height: 29rem;
-  background-color: white;
-  border-radius: 8px;
+  width: 500px;
+  background-color: rgba(245, 245, 245, 0.871);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 30px;
 }
 
-.project-card .img-wrapper {
-  width: 100%;
-  height: 50%;
+.project-card:hover {
+  box-shadow: 8px 8px 2px 1px #9db52a;
+  transform: translate(-20px, -40px)  scale(1.2);
 }
 
 .project-card .img-wrapper img {
+  height: 350px;
   width: 100%;
-  height: 100%;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
 }
 
+.content {
+  margin: 10px;
+  height: auto;
+  border-radius:20px;
+  border: 1px dotted #9db52a;
+
+}
 .project-card .project-card-name {
   text-align: center;
   font-size: 27px;
@@ -64,7 +82,8 @@
 .project-card .project-card-contractor {
   display: block;
   text-align: center;
-  font-size: 20px;
+  font-size: 28px;
+  height: 40px;
 }
 
 .project-card .project-card-details-link {
@@ -72,14 +91,14 @@
   text-align: center;
   margin: 2rem auto 1rem;
   display: block;
-  width: 90%;
-  font-size: 20px;
+  width: 80%;
+  font-size: 28px;
   padding: 10px;
-  background-color: dodgerblue;
+  background-color: #9db52a;
   color: white;
   border: none;
-  border-top-right-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-right-radius: 22px;
+  border-bottom-left-radius: 22px;
 }
 
 .not-found-paragraph {
@@ -90,8 +109,4 @@
   left: -26px;
 }
 
-.spinner {
-  display: flex;
-  justify-content: center;
-  margin-top: 10rem;
-}
+

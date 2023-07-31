@@ -22,7 +22,8 @@ import { ProjectsModule } from './feature/projects/projects.module';
     CoreModule,
     HttpClientModule, 
     AuthModule,
-    ProjectsModule
+    ProjectsModule,
+    PagesModule
     
   ],
   providers: [],

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NewsPageComponent } from './news-page/news-page.component';
 import { RouterModule } from '@angular/router';
-import { PagesRoutingModule } from './pages-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -13,8 +13,8 @@ import { PagesRoutingModule } from './pages-routing.module';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ]
 })
 export class PagesModule { }

@@ -1,1 +1,59 @@
-<p>project-list-item-details works!</p>
+
+<main>
+    <section class="main-details" *ngIf="project">
+
+    <h1 class="title">{{project.projectName}}</h1>
+    
+    <div class="details-img">
+        <img src={{project.imageUrl1}} class="project-card-img">
+        <img src={{project.imageUrl2}} class="project-card-img">
+        <img src={{project.imageUrl3}} class="project-card-img">
+    </div>
+
+
+    <div class="details-info">
+        <p class="p-info">Contractor</p>
+        <p class="span-info">{{project.contractor}}</p>
+        <p class="p-info">Release year </p>
+        <p class="span-info">{{project.release}}</p>
+        <p class="p-info">Location</p> 
+       <p class="span-info">{{project.location}}</p>
+        <p class="p-info">More About</p>
+         <p class="span-info">{{project.description}}</p>
+      <!--  <p class="p-info">Likes: <span class="span-info">{{0 + likesCount?}}</span></p>
+
+
+      
+        <ng-container *ngIf="!isOwner">
+          <section *ngIf="isLoggedIn" class="like-buy-btn">
+                <div class="like-functionality">
+                        <ng-container *ngIf="canLike">
+                            <button class="edit-delete-btns" (click)="likeBook()">Like</button>
+                        </ng-container>
+
+                        <ng-container *ngIf="!canLike">
+                            <button disabled [class.canLike]="!canLike" class="edit-delete-btns"
+                                (click)="likeBook()">Already liked</button>
+                        </ng-container>
+                </div>
+            </section>
+        
+            <div *ngIf="!isLoggedIn">
+                <button class="edit-delete-btns" routerLink="/login">Like</button>
+            </div>
+
+        </ng-container> -->
+
+        <ng-container *ngIf="isOwner">
+            <div class="edit-delete-btns-main">
+                <button [routerLink]="['/edit', project._id]">Edit</button>
+                <button (click)="deleteProject()">Delete</button>
+            </div>
+        </ng-container>
+    </div>
+</section>
+
+<section *ngIf="!project">
+    Loading...
+</section>
+</main>

@@ -28,7 +28,7 @@ const routes:Routes = [
         component: EditProjectComponent
     },
     {
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
         path:"add-project",
         component: AddProjectComponent
     }

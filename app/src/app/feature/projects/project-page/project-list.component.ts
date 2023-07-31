@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IProjects } from 'src/app/core/interfaces/IProjects';
 import { PostsService } from 'src/app/core/services/projects.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',

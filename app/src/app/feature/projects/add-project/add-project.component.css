@@ -1,0 +1,94 @@
+@import url("https://use.fontawesome.com/releases/v6.4.0/css/all.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+main {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    justify-content: center;
+    background: url("https://data.1freewallpapers.com/download/bridge-construction-road-3840x2400.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.section {
+    border: 1px solid #9db52a;
+    margin-block: 100px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.create-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1000px;
+    min-height: 90vh;
+    padding-bottom: 100px;
+}
+
+.create-page-heading {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    padding-block: 30px;
+    text-shadow: 3px 3px 3px black;
+}
+.create__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.label {
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 26px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.create_input {
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    padding: 10px 50px;
+    margin-inline: auto;
+    width: 600px;
+    border-radius: 25px;
+    border: 1px solid black;
+    background: radial-gradient(circle, white 60%, transparent) ;
+}
+.create_input:hover {
+    background: white ;
+}
+.error{
+    font-size: 22px; 
+    background-color: white;
+    text-align: center;
+    color: black;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.create-form-btn{
+    color: white;
+    font-size: 24px;
+    margin-top: 30px;
+    width: 200px;
+    padding: 10px 50px;
+    background-color: black;
+    box-shadow:  1px 1px 2px white;
+}
+
+.create-form-btn:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: #9db52a;
+    padding: .75rem 2rem;
+}
