@@ -20,14 +20,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logoutHandler() {
-    this.authService.logout().subscribe(data => console.log(data));
-    sessionStorage.removeItem('email');
-    sessionStorage.removeItem('accessToken');
-    sessionStorage.removeItem('_id');
-    this.router.navigate(['/home']);
+  logoutHandler(): void {
+    this.authService.logout().subscribe(data => console.log(data))
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('accessToken');
+        sessionStorage.removeItem('_id');
+        this.router.navigate([`/home`]);
+      }
+
   }
-
-}
-
   

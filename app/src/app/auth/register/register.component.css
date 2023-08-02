@@ -10,12 +10,12 @@ main{
     margin-block: 150px;
     display: flex;
 height: auto;
-    width: 55vw;
+    min-width: 65vw;
     display: flex;
     border: 1px solid black;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow:  0 15px 15px #4d565a;;
+    box-shadow:  0 15px 15px #4d565a;
 
 
 }

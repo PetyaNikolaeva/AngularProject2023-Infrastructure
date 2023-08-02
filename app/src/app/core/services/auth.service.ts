@@ -13,13 +13,24 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
   public currentUser: IUser| null = null;
+
+
   get isLogged() {
     return !!this.currentUser;
   }
 
 
-  register(userData: {email: string, password: string}): Observable<IUser> {
+  register(userData: {email: string, password: string, username: string, companyInfo:string, logo:string}): Observable<IUser> {
     return this.httpClient.post<IUser>(`${environment.apiUrl}/users/register`, userData)
+    .pipe(tap(user => {
+      localStorage.setItem('email', user.email);
+      localStorage.setItem('accessToken', user.accessToken);
+      localStorage.setItem('username', user.username);
+      localStorage.setItem('companyInfo', user.companyInfo);
+      localStorage.setItem('logo', user.logo);
+      localStorage.setItem('_id', user._id);
+      this.currentUser = user
+    }));
   }
 
   login(userData: {email: string, password: string}): Observable<IUser> {
@@ -35,6 +46,7 @@ export class AuthService {
   logout() { 
     this.currentUser = null;
     return this.httpClient.get(`${environment.apiUrl}/users/logout`)
+    
   }
 
   getProfile() {

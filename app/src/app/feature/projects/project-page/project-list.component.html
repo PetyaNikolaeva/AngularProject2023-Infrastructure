@@ -1,20 +1,53 @@
 <main>
-    <form class="searchbar-form">
-        <input type="text" name="search" id="search" placeholder="Search a project">
+    <form class="searchbar-form" [formGroup]="searchFormGroup" (ngSubmit)="searchHandler()" >
+        <input formControlName="search" type="search" id="search" placeholder="Enter location">
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
+    <ng-container *ngIf="!hasSearch"> 
     <section class="project-section">
+        <ng-container *ngIf="projects">
         <article class="project-card" *ngFor="let project of projects">
             <div class="img-wrapper">
                 <img src={{project?.imageUrl1}} class="project-card-img">
             </div>
             <div class="content">
                 <p class="project-card-name">{{project?.projectName}}</p>
-                <span class="project-card-contractor">Contractor:  <strong>{{project?.contractor}}</strong></span>
+                <span class="project-card-contractor">Location:  <strong>{{project?.location}}</strong></span>
                 <!--<a [routerLink]="['/projects/details', project._id]" class="project-card-details-link">Read More</a> -->
                 <a [routerLink]="['/projects/details', project._id]" class="project-card-details-link">Read More</a>
             </div>
         </article>
+    </ng-container>
+        <div *ngIf="projects && projects.length == 0">
+            <p class="title">ADD YOUR PROJECTS <a [routerLink]="['/add-project']">HERE</a></p>
+        </div>
     </section>
+</ng-container>
+
+
+<ng-container *ngIf="hasSearch"> 
+    <section class="project-section">
+        <ng-container *ngIf="searchProject">
+        <article class="project-card" *ngFor="let project of searchProject">
+            <div class="img-wrapper">
+                <img src={{project?.imageUrl1}} class="project-card-img">
+            </div>
+            <div class="content">
+                <p class="project-card-name">{{project?.projectName}}</p>
+                <span class="project-card-contractor">Location:  <strong>{{project?.location}}</strong></span>
+                <!--<a [routerLink]="['/projects/details', project._id]" class="project-card-details-link">Read More</a> -->
+                <a [routerLink]="['/projects/details', project._id]" class="project-card-details-link">Read More</a>
+            </div>
+        </article>
+    </ng-container>
+        <div *ngIf="searchProject && searchProject.length == 0">
+            <p class="title">No projects in that location <a [routerLink]="['/add-project']">Add projects here</a></p>
+        </div>
+    </section>
+</ng-container>
+
+
+
+
 </main>

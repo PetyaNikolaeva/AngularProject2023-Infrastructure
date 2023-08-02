@@ -12,27 +12,25 @@
         <li class="header__nav-item">
           <a class="header__nav-link" role="button" routerLink="projects">Projects</a>
         </li>
+        <ng-container *ngIf="isLogged"> 
+          <li class="header__nav-item">
+            <a class="header__nav-link" role="button" routerLink="add-project">Add Project</a>
+          </li>
+        </ng-container>
         <li class="header__nav-item">
           <a class="header__nav-link" role="button" routerLink="leaders">Leaders</a>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-link" role="button" routerLink="news">News</a>
         </li>
-        <ng-container *ngIf="isLogged"> 
-        <li class="header__nav-item">
-          <a class="header__nav-link" role="button" routerLink="add-project">Add Project</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link" role="button" routerLink="my-projects">My Projects</a>
-        </li>
-      </ng-container>
+
         
       </ul>
 
       <ul class="header__auth">
         <ng-container *ngIf="isLogged"> 
           <li class="header__nav-item"><a  class="header__nav-link" routerLink="profile">Profile</a></li>
-          <li class="header__nav-item"><a  class="header__nav-link" routerLink="logout" (click)="logoutHandler()">Logout</a></li>
+          <li class="header__nav-item"><a  class="header__nav-link" (click)="logoutHandler()">Logout</a></li>
         </ng-container>
         <ng-container *ngIf="!isLogged"> 
           <li class="header__nav-item"><a class="header__nav-link" routerLink="login">Login</a></li>

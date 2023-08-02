@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Form } from '@angular/forms';
 import { IProjects } from 'src/app/core/interfaces/IProjects';
 import { PostsService } from 'src/app/core/services/projects.service';
 import { Router } from '@angular/router';
@@ -9,19 +9,51 @@ import { Router } from '@angular/router';
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.css']
 })
-export class ProjectListComponent implements OnInit{
-
-
+export class ProjectListComponent implements OnInit{ 
   projects: IProjects[] | null = null;
+  searchProject: IProjects[] = []; 
+  hasSearch: boolean = false;
 
+  searchFormGroup: FormGroup = this.formBuilder.group({
+    'search': new FormControl('')
+  })
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService, 
+    private formBuilder: FormBuilder,
+    private router: Router
+    ) { }
 
+ searchHandler() {
+  const { search } = this.searchFormGroup.value
+    const  string  = this.searchFormGroup.value 
+    this.hasSearch = true
+    this.searchProject = []
+    if (string.search == '') {
+      this.hasSearch = false
+    } else {
+      console.log(string.search);
 
+      this.projects?.map((x) => {
+        if (x.location.toLowerCase().includes(string.search.toLowerCase())) {
+          this.searchProject.push(x)
+        }
+      })  
+      this.hasSearch = true
+    }
+  }
 
   ngOnInit(): void {
-    this.postsService.loadProjectList().subscribe(projectList => {
-        this.projects = projectList;
+    this.hasSearch = false
+    this.postsService.loadProjectList().subscribe({
+      next: (projects) => {
+        this.projects = projects
+        
+      },
+      error: (err) => {
+        console.log(err.message);
+        this.router.navigate(['/'])
+
+      }
     })
 
 }

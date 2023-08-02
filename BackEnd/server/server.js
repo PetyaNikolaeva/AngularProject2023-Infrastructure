@@ -1427,12 +1427,16 @@
       '35c62d76-8152-4626-8712-eeb96381bea8': {
         email: 'peter@abv.bg',
         username: "G.P.GROUP",
+        logo: "https://career.uacg.bg/wp-content/uploads/2020/05/gp-group-logo.png",
+        companyInfo: "G.P. GROUP JSC is a construction company that covers a wide range of services related to the construction and maintenance of buildings, facilities and engineering infrastructure in the field of housing, public and industrial construction. The scope of activity of the company includes research and consulting in the field of real estates, construction, design, architecture and construction works in all spheres of construction, maintenance and repairs of buildings and facilities.",
         hashedPassword:
           '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
       '847ec027-f659-4086-8032-5173e2f9c93a': {
         email: 'john@abv.bg',
         username: "Transport Infrastructure - GBS",
+        logo: "https://gbs-bg.com/wp-content/uploads/2023/06/gbs-logo-en.svg",
+        companyInfo: "We design, reconstruct and build roads, motorways, tunnels and bridges to connect key transport networks that keep Europe moving.Our innovative work includes the award-winning three-level Lion’s Bridge and reconstructing the Bebresh Viaduct, one of the highest bridges in southeastern Europe.",
         hashedPassword:
           '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
@@ -1472,15 +1476,31 @@
         imageUrl2: 'https://www.metropolitan.bg/assets/resourceimages/1042/metro-vitosha-7.jpg',
         imageUrl3: 'https://d1c4d7gnm6as1q.cloudfront.net/Pictures/2000xAny/5/0/9/14509_tn_bg-sofia-m2-vitosha-station-1.jpg',
         release: '2016',
-        location: 'Vitosha Metro station is located on the boulevard Cherni Vrah, between his intersections and the street Henrik Ibsen and the street Philip Kutev, Sofia',
+        location: 'Boulevard Cherni Vrah, Sofia',
         description: 'The project includes construction of a two-way metro tunnel and one metro station. The construction of most of the metro route was constructed under the New Austrian tunnelling method, and the metro station and a small section of the metro tunnel were built under the Milanese method.',
         _createdOn: 1617194295480,
       }, 
     },
-
     likes: {},
+    leaders:{
+      "1840a313-225c-546a-817a-9954d4609f7c": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "G.P.GROUP", 
+        logo: "https://career.uacg.bg/wp-content/uploads/2020/05/gp-group-logo.png",
+        companyInfo: "G.P. GROUP JSC is a construction company that covers a wide range of services related to the construction and maintenance of buildings, facilities and engineering infrastructure in the field of housing, public and industrial construction. The scope of activity of the company includes research and consulting in the field of real estates, construction, design, architecture and construction works in all spheres of construction, maintenance and repairs of buildings and facilities.",
+       
+      },
+      "1840a313-225c-416a-81ca-9954e5609l7c": {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a", 
+        username: "Transport Infrastructure - GBS",
+        logo: "https://gbs-bg.com/wp-content/uploads/2023/06/gbs-logo-en.svg",
+        companyInfo: "We design, reconstruct and build roads, motorways, tunnels and bridges to connect key transport networks that keep Europe moving.Our innovative work includes the award-winning three-level Lion’s Bridge and reconstructing the Bebresh Viaduct, one of the highest bridges in southeastern Europe.",
+        
+      }
+    }
+  
     
-  };
+  }
   var rules$1 = {
     users: {
       '.create': false,

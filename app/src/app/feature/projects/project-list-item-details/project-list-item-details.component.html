@@ -20,20 +20,20 @@
        <p class="span-info">{{project.location}}</p>
         <p class="p-info">More About</p>
          <p class="span-info">{{project.description}}</p>
-      <!--  <p class="p-info">Likes: <span class="span-info">{{0 + likesCount?}}</span></p>
+      <p class="p-info">Likes: <span class="span-info">{{likesCount}}</span></p>
 
-
+      
       
         <ng-container *ngIf="!isOwner">
           <section *ngIf="isLoggedIn" class="like-buy-btn">
                 <div class="like-functionality">
                         <ng-container *ngIf="canLike">
-                            <button class="edit-delete-btns" (click)="likeBook()">Like</button>
+                            <button class="edit-delete-btns" (click)="likeProject()">Like</button>
                         </ng-container>
 
                         <ng-container *ngIf="!canLike">
                             <button disabled [class.canLike]="!canLike" class="edit-delete-btns"
-                                (click)="likeBook()">Already liked</button>
+                                (click)="likeProject()">Already liked</button>
                         </ng-container>
                 </div>
             </section>
@@ -42,7 +42,7 @@
                 <button class="edit-delete-btns" routerLink="/login">Like</button>
             </div>
 
-        </ng-container> -->
+        </ng-container> 
 
         <ng-container *ngIf="isOwner">
             <div class="edit-delete-btns-main">

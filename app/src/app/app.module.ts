@@ -10,10 +10,12 @@ import { AuthModule } from './auth/auth.module';
 import { Router, RouterModule } from '@angular/router';
 import { PagesModule } from './feature/pages/pages.module';
 import { ProjectsModule } from './feature/projects/projects.module';
+import { LeadersComponent } from './feature/projects/leaders/leaders.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LeadersComponent
   ],
   imports: [
     AppRoutingModule,
