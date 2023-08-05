@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service'; 
 import { ILeaders } from '../interfaces/ILeaders'; 
 import { ILike } from '../interfaces/ILike';
+import { getUserData } from 'src/app/auth/util';
 const apiUrl = environment.apiUrl;
 
 @Injectable({
@@ -26,31 +27,36 @@ export class PostsService {
   }
 
   addProject(data: IProjects): Observable<IProjects> {
-    const headers = new HttpHeaders({
-      'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
-    });
+    const token = getUserData().accessToken
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('X-Authorization', '' + token);
 
-    return this.http.post<IProjects>(`${apiUrl}/data/albums`, data, { headers })
+    return this.http.post<IProjects>(`${apiUrl}/data/albums`, data, { headers:headers })
 
   }
-  getDetails(id: string) {
+  getDetails(id: string): Observable<IProjects> {
     return this.http.get<IProjects>(`${apiUrl}/data/albums/${id}`);
   }
 
   editProject(id: string, data: IProjects): Observable<IProjects> {
-    const headers = new HttpHeaders({
-      'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
-    });
+    const token = getUserData().accessToken
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('X-Authorization', '' + token);
 
-    return this.http.put<IProjects>(`${apiUrl}/data/albums/${id}`, data, { headers })
+    return this.http.put<IProjects>(`${apiUrl}/data/albums/${id}`, data, { headers:headers })
 
   }
 
   removeProject(id: string) {
-    const headers = new HttpHeaders({
-      'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
-    });
-    return this.http.delete(`${apiUrl}/data/albums/${id}`, { headers });
+
+    const token = getUserData().accessToken
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('X-Authorization', '' + token);
+   
+    return this.http.delete(`${apiUrl}/data/albums/${id}`, { headers:headers });
 
   }
   loadLeaders(): Observable<ILeaders[]> {
@@ -63,11 +69,13 @@ export class PostsService {
   }
 
   createLike(albumId: string): Observable<ILike> {
-    const headers = new HttpHeaders({
-      'X-Authorization': this.authService.currentUser?.['accessToken'] || ''
-    });
+    
+    const token = getUserData().accessToken
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('X-Authorization', '' + token);
 
-    return this.http.post<ILike>(`${apiUrl}/data/likes`, {albumId}, { headers })
+    return this.http.post<ILike>(`${apiUrl}/data/likes`, {albumId}, { headers:headers })
 
   }
 
@@ -75,7 +83,9 @@ export class PostsService {
     return this.http.get<number>(`${apiUrl}/data/likes?where=albumId%3D%22${id}%22&distinct=_ownerId&count`);
   }
 
+  /*
   likesPerUser(id: string, userId: string) {
     return this.http.get<ILike>(`${apiUrl}/data/likes?where=albumId%3D%22${id}%22%20and%20_ownerId%3D%22${userId}%22&count`);
   }
+  */
 }

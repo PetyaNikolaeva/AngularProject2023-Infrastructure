@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { AuthService } from 'src/app/core/services/auth.service';
-
+import { setUserData, clearUserData } from '../util';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginComponent  {
 
-  pattern = '^[a-z0-9A-Z\.-]{3,}@[a-z]+\.[a-z]+$'
+  pattern = '^[a-z0-9A-Z]{3,}@[a-z]+\.[a-z]+$'
 
   loginFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('', [Validators.required, Validators.pattern(this.pattern)]),
@@ -28,12 +28,13 @@ export class LoginComponent  {
 
   handleLogin():void {
     this.authService.login(this.loginFormGroup.value).subscribe({
-      next: ()=> {
-        this.loginFormGroup.reset()
+      next: (userData)=> {
+        clearUserData()
+        this.authService.setLoginInfo(userData,true)
+        setUserData(userData)
         this.router.navigate([`/home`]);
       },
       complete: () => {
-        this.errors = '';
         console.log('login completed');
         
       },

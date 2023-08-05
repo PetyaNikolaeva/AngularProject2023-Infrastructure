@@ -6,12 +6,12 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Barlow', sans-serif;
-  
+
   }
   
   
   header {
+    font-family: 'Barlow', sans-serif;
     color: rgba(245, 245, 245, 0.871);
     background-color: #4d565a;
     display: flex;
@@ -20,6 +20,7 @@ body {
     padding: 1rem 5rem;
     flex-direction: row;
     font-size: 26px;
+    font-weight: 400;
   }
   
   nav {
@@ -46,7 +47,7 @@ body {
     align-items: center;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 2px 2px 0px 0px rgba(232, 232, 232, 0.8);
+    box-shadow: 2px 2px 0px 0px #9db52a;
   }
   
   
@@ -69,7 +70,7 @@ body {
   
   }
   
-  nav .header__nav-link:hover, nav .header__nav-link:visited {
+  nav .header__nav-link:hover, nav .header__nav-link:focus {
     text-decoration: underline;
     background-color: #9db52a;
     padding: .75rem 2rem;

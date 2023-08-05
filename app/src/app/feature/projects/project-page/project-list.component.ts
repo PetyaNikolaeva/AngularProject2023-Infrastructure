@@ -13,7 +13,8 @@ export class ProjectListComponent implements OnInit{
   projects: IProjects[] | null = null;
   searchProject: IProjects[] = []; 
   hasSearch: boolean = false;
-
+  errors:  | undefined = undefined;
+  
   searchFormGroup: FormGroup = this.formBuilder.group({
     'search': new FormControl('')
   })
@@ -50,7 +51,7 @@ export class ProjectListComponent implements OnInit{
         
       },
       error: (err) => {
-        console.log(err.message);
+        this.errors = err.error.message;
         this.router.navigate(['/'])
 
       }

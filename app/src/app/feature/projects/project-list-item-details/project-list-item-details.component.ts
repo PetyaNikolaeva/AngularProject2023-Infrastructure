@@ -4,7 +4,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { PostsService } from 'src/app/core/services/projects.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TypeModifier } from '@angular/compiler';
-
+import { getUserData } from 'src/app/auth/util';
 @Component({
   selector: 'app-project-list-item-details',
   templateUrl: './project-list-item-details.component.html',
@@ -14,8 +14,7 @@ export class ProjectListItemDetailsComponent implements OnInit{
 
   project: IProjects | null = null;
   isOwner: boolean = false;
-  isLoggedIn: boolean = this.authService.isLogged;
-  currentUser = this.authService.currentUser;
+  isLoggedIn: boolean = this.authService.isLogged
   canLike: boolean = true;
   errorMessage:  | undefined = undefined;
   likesCount: number | null = null;
@@ -32,7 +31,7 @@ export class ProjectListItemDetailsComponent implements OnInit{
 
       this.postsService.getDetails(id).subscribe((project) => {
         this.project = project
-        if (this.project._ownerId === this.currentUser?._id) {
+        if (this.project._ownerId === getUserData()._id) {
           this.isOwner = true;
         }
         ;});
@@ -69,6 +68,7 @@ export class ProjectListItemDetailsComponent implements OnInit{
             this.postsService.getLike(id).subscribe((result) => {
               this.likesCount = result
                })
+               this.canLike = false;
           },
           error: (err) => {
             this.errorMessage = err.error.message;

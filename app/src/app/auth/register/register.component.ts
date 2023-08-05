@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { passwordMatch } from '../passwordMatch';
 import { PostsService } from 'src/app/core/services/projects.service';
 import { ILeaders } from 'src/app/core/interfaces/ILeaders';
-
+import { getUserData, setUserData } from '../util';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -39,7 +39,9 @@ export class RegisterComponent {
   registerHandler(): void {
 
     this.authService.register(this.registerFormGroup.value).subscribe({
-      next: () => {
+      next: (userData) => {
+        setUserData(userData)
+        this.authService.setLoginInfo(userData, true)
         this.registerFormGroup.reset();
         this.router.navigate([`/home`]);
       },
@@ -50,21 +52,19 @@ export class RegisterComponent {
     },
       error: (err) => {
         let message = err.error.error;
-
         if (message === 'Account already exists for this email address.'){
           console.log('email here');
           this.hasSameEmail = true
-        }
-        
+        } 
         this.errors = message;
         console.log(message, this.hasSameEmail);
       }
     })
 
    
-    const username = localStorage.getItem('username')
-    const logo = localStorage.getItem('logo')
-    const companyInfo = localStorage.getItem('companyInfo')
+    const username = getUserData().username
+    const logo = getUserData().logo
+    const companyInfo = getUserData().companyInfo
 
     if(username && logo && companyInfo) {
       const data = {username: username, logo: logo, companyInfo: companyInfo}

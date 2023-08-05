@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/core/services/projects.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { IProjects } from 'src/app/core/interfaces/IProjects'; 
+import { getUserData } from '../util';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit{
 
   
   projects: IProjects[] =[]
-  errorMessage:  | undefined = undefined;
+  errors:  | undefined = undefined;
 
   constructor(private authService: AuthService, private postsService: PostsService) {}
 
@@ -31,19 +32,21 @@ export class ProfileComponent implements OnInit{
       },
 
         error: (err) => {
-          this.errorMessage = err.error.message;
+          console.log(err)
+          this.errors = err.error.message;
         }
     
     });
 
-    const userId = sessionStorage.getItem('_id');
-    
+    const user = getUserData()
+    const userId= user._id;
+
       this.postsService.getUserProjects(userId).subscribe({
         next: (response) => {
           this.projects = response;
         },
         error: (err) => {
-          this.errorMessage = err.error.message;
+          this.errors = err.error.message;
         }
       });
     }

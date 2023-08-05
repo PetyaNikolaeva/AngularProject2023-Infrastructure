@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IUser } from '../interfaces/IUser';
 import { environment } from 'src/environments/environment';
-import { Observable, tap } from 'rxjs';
+import { tap } from 'rxjs';
+import { getUserData } from 'src/app/auth/util';
 
 const apiUrl = environment.apiUrl;
 
@@ -10,50 +11,42 @@ const apiUrl = environment.apiUrl;
   providedIn: 'root'
 })
 export class AuthService {
+  user!: IUser | null;
+  isLogged: boolean = false 
+
 
   constructor(private httpClient: HttpClient) { }
-  public currentUser: IUser| null = null;
 
-
-  get isLogged() {
-    return !!this.currentUser;
+  setLoginInfo(user: IUser | null, status: boolean) {
+    return (
+      this.user = user,
+      this.isLogged = status
+    );
   }
 
-
-  register(userData: {email: string, password: string, username: string, companyInfo:string, logo:string}): Observable<IUser> {
-    return this.httpClient.post<IUser>(`${environment.apiUrl}/users/register`, userData)
-    .pipe(tap(user => {
-      localStorage.setItem('email', user.email);
-      localStorage.setItem('accessToken', user.accessToken);
-      localStorage.setItem('username', user.username);
-      localStorage.setItem('companyInfo', user.companyInfo);
-      localStorage.setItem('logo', user.logo);
-      localStorage.setItem('_id', user._id);
-      this.currentUser = user
-    }));
+  register(userData: {email: string, password: string, username: string, companyInfo:string, logo:string}) {
+    return this.httpClient.post<IUser>(`${environment.apiUrl}/users/register`, userData).pipe(tap((response) => {
+      if (!response._id) { return }
+    }))
   }
 
-  login(userData: {email: string, password: string}): Observable<IUser> {
-    return this.httpClient.post<IUser>(`${environment.apiUrl}/users/login`, userData)
-    .pipe(tap(user => {
-      sessionStorage.setItem('email', user.email);
-      sessionStorage.setItem('accessToken', user.accessToken);
-      sessionStorage.setItem('_id', user._id);
-      this.currentUser = user
-    }));
+  login(userData: {email: string, password: string}) {
+    return this.httpClient.post<IUser>(`${environment.apiUrl}/users/login`, userData).pipe(tap((response) => {
+      if (!response._id) { return }
+  }))
   }
-
   logout() { 
-    this.currentUser = null;
     return this.httpClient.get(`${environment.apiUrl}/users/logout`)
-    
   }
 
   getProfile() {
-    const token = sessionStorage.getItem('accessToken');
+    const token = getUserData().accessToken
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('X-Authorization', '' + token);
 
     if (token) {
-      return this.httpClient.get<IUser>(`${apiUrl}/users/me`,{ headers: new HttpHeaders({ 'X-Authorization': token }) })
+      return this.httpClient.get<IUser>(`${apiUrl}/users/me`,{ headers: headers })
     } else {
       return this.httpClient.get<IUser>(`${apiUrl}/users/me`)
     }

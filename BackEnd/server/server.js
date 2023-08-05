@@ -1466,6 +1466,7 @@
         imageUrl3: 'https://i.ytimg.com/vi/zBjbzuNto_I/maxresdefault.jpg',
         release: '2021',
         location: 'Section of road II-18 from km 35 to km 41, Sofia',
+        description: 'The project includes construction of a two-way metro tunnel and one metro station. The construction of most of the metro route was constructed under the New Austrian tunnelling method, and the metro station and a small section of the metro tunnel were built under the Milanese method.',
         _createdOn: 1617194295474,
       },
       '136777f5-3277-42ad-b874-76d043b069cb': {

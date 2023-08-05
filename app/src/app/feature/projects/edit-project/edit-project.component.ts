@@ -10,8 +10,8 @@ import { IProjects } from 'src/app/core/interfaces/IProjects';
   styleUrls: ['./edit-project.component.css']
 })
 export class EditProjectComponent {
-  URL_PATTERN = /^https?:\/\/.+/i
-  errorMessage: | undefined = undefined;
+  errors:  | undefined = undefined;
+  URL_PATTERN = /^https?:/
   project: IProjects | null = null;
 
   editFormGroup: FormGroup = this.formBuilder.group({
@@ -53,7 +53,7 @@ export class EditProjectComponent {
         //this.router.navigate([`/projects/${project._id}`])
       },
       error: (err) => {
-        this.errorMessage = err.error.message;
+        this.errors = err.error.message;
       }
     })
   }

@@ -10,8 +10,8 @@ import { PostsService } from 'src/app/core/services/projects.service';
 })
 export class AddProjectComponent {
 
-  errorMessage:  | undefined = undefined;
-  URL_PATTERN = /^https?:\/\/.+/i
+  errors:  | undefined = undefined;
+  URL_PATTERN = /^https?:/
 
 
   createFormGroup: FormGroup = this.formBuilder.group({
@@ -30,7 +30,6 @@ export class AddProjectComponent {
 
 
   handleCreateProject():void {
-   const { projectName, contractor, release, location, description, imageUrl1, imageUrl2, imageUrl3 } = this.createFormGroup.value
 
     this.postsService.addProject(this.createFormGroup.value).subscribe({
       next: (project) => {
@@ -38,7 +37,7 @@ export class AddProjectComponent {
         this.router.navigate(['/projects']);
       },
       error: (err) => {
-        this.errorMessage = err.error.message;
+        this.errors = err.error.message;
       }
     })
   }

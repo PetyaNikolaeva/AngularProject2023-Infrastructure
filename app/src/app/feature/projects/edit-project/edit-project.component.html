@@ -74,7 +74,7 @@
                 <p class="error" *ngIf="editFormGroup.get('imageUrl3')?.errors?.['required']">Image is required!</p>
             </ng-container>
         </div>
-            <p *ngIf="errorMessage" class="server-error">{{errorMessage}}</p>
+            <p *ngIf="errors" class="server-error">{{errors}}</p>
 
             <button class="create-form-btn" [disabled]="editFormGroup.invalid">Save</button>
             <button class="create-form-btn" routerLink="/">Back</button>

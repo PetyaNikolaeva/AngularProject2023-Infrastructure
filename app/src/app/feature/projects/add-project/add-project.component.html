@@ -74,7 +74,7 @@
                 <p class="error" *ngIf="createFormGroup.get('imageUrl3')?.errors?.['required']">Image is required!</p>
             </ng-container>
         </div>
-            <p *ngIf="errorMessage" class="server-error">{{errorMessage}}</p>
+            <p *ngIf="errors" class="server-error">{{errors}}</p>
 
             <button class="create-form-btn" [disabled]="createFormGroup.invalid">Create</button>
         
