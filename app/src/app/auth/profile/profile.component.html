@@ -1,34 +1,41 @@
 <main>
-    <h1 class="title">PROFILE</h1>
+    <span> <h1 class="title">{{username}}</h1></span>
     <section class="profile">
         <div class="first">
-        <img class="logo" src="{{logo}}" alt="">
-        <div class="content">
-            <h2>{{username}}</h2>
-            <p class="desc"><i class="fa-solid fa-envelope"></i>{{email}}</p> 
-            <p class="desc"><i class="fa-solid fa-user"></i>{{userId}}</p> 
+            <img class="logo" src="{{logo}}" alt="">
+            <div class="content">
+                <p class="desc"><i class="fa-solid fa-envelope"></i> {{email}}</p>
+                <p class="desc"><i class="fa-solid fa-user"></i> {{userId}}</p>
+            </div>
         </div>
-    </div>
-    <div class="second">
-        <p class="info">Company Information: {{companyInfo}}</p> 
-    </div>
+        <div class="second">
+            <h2 class="info">Company Information</h2>
+            <p class="info"> {{companyInfo}}</p>
+        </div>
     </section>
     <section class="projects">
-        <ng-container *ngIf="projects">
-            <section  class="my-project">
+        <ng-container *ngIf="projects && projects.length !== 0">
+            <section class="my-project">
+                <h2 class="title">MY PROJECTS</h2>
                 <div class="my-project-card" *ngFor="let project of projects">
-                    <h2 class="title">MY PROJECTS</h2>
-                    <p class="my-project-card-name">{{project.projectName}}</p>
+                    <div class="card"> 
                     <img src={{project.imageUrl1}} class="project-card-img">
-                    <p class="my-project-card-name">{{project.location}}</p>
-                    <a [routerLink]="['/projects/details', project._id]" class="my-project-card-details-link">Edit details</a>
-                </div>
-            </section>    
-            </ng-container>
             
-            <div *ngIf="projects && projects.length == 0">
-                <p class="title">ADD YOUR PROJECTS <a [routerLink]="['/add-project']">HERE</a></p>
-            </div>
+                    <div class="text">
+                        <span class="my-project-card-name name">Location</span>
+                        <p class="my-project-card-name">{{project.location}}</p>
+                        <span class="my-project-card-name name">Name</span>
+                        <p class="my-project-card-name">{{project.projectName}}</p>
+                        <button> <a [routerLink]="['/projects/details', project._id]" class="my-project-card-details-link">EDIT</a></button>
+                    </div>
+                </div>
+
+                </div>
+            </section>
+        </ng-container>
+
+        <div *ngIf="projects && projects.length == 0">
+            <p class="title">ADD YOUR PROJECTS <a class="add_project" [routerLink]="['/add-project']">HERE</a></p>
+        </div>
     </section>
 </main>
-

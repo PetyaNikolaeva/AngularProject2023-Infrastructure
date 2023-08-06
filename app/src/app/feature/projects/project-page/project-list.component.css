@@ -54,6 +54,7 @@ main {
   flex-direction: column;
   overflow: hidden;
   margin-bottom: 30px;
+  transition:all 300ms;
 }
 
 .project-card:hover {

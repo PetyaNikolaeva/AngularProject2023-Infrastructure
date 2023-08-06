@@ -19,9 +19,9 @@ export class RegisterComponent {
     
     registerFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('', [Validators.required, Validators.pattern(this.pattern)]),
-    'username': new FormControl('', [Validators.required, Validators.minLength(3)]),
     'password': this.passwordControl,
     'repass': new FormControl(null, [passwordMatch(this.passwordControl)]),
+    'username': new FormControl('', [Validators.required,  Validators.minLength(3)]),
     'logo': new FormControl(''),
     'companyInfo': new FormControl('')
   })
@@ -51,17 +51,11 @@ export class RegisterComponent {
         console.log('register completed'); 
     },
       error: (err) => {
-        let message = err.error.error;
-        if (message === 'Account already exists for this email address.'){
-          console.log('email here');
-          this.hasSameEmail = true
-        } 
-        this.errors = message;
-        console.log(message, this.hasSameEmail);
+        console.log(err.error.error);
       }
     })
 
-   
+   /*
     const username = getUserData().username
     const logo = getUserData().logo
     const companyInfo = getUserData().companyInfo
@@ -74,7 +68,7 @@ export class RegisterComponent {
     } else {
       console.warn('No username!')
     }
-  
+  */
   }
 
 

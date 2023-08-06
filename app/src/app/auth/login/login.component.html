@@ -12,10 +12,14 @@
           <p class="error" *ngIf="loginFormGroup.get('email')?.errors?.['required']" class="error">Email is necessary!</p>
           <p class="error" *ngIf="loginFormGroup.get('email')?.errors?.['pattern']" class="error">Invalid email!</p>
         </ng-container>
+
+
         <input formControlName="password" type="password" name="password" required placeholder="Password">
         <ng-container *ngIf="loginFormGroup.get('password')?.touched && loginFormGroup.get('password')?.invalid">
           <p class="error">Password must be at least 6 characters!</p>
         </ng-container>
+
+        
         <p *ngIf="errors" class="server-error">{{errors}}</p>
     <button class="login-form-btn" [disabled]="loginFormGroup.invalid">Login</button>
         <p class="message">

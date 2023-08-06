@@ -7,7 +7,7 @@
     <div class="panel panel-right">
 
       <h2>Register</h2>
-      <form class="register-form" [formGroup]="registerFormGroup" (ngSubmit)="registerHandler()" >
+      <form class="register-form" [formGroup]="registerFormGroup" (ngSubmit)="registerHandler()">
         
         <input formControlName="email" type="text" name="email" placeholder="Email">
       
@@ -24,19 +24,17 @@
 
       <input formControlName="repass" type="password" name="repass" placeholder="Repeat Password">
 
-      <ng-container *ngIf="registerFormGroup.get('password')?.touched  && registerFormGroup.get('password')?.invalid">
-        <p class="error">Password must be minimum 6 characters!</p>
-      </ng-container>
-
-   
       <ng-container *ngIf="registerFormGroup.get('repass')?.touched  && registerFormGroup.get('repass')?.invalid">
         <p class="error">Password is not same!</p>
       </ng-container>
-      <input formControlName="username" type="username" name="username" placeholder="Company name">
+      
 
+      <input formControlName="username" type="username" name="username" placeholder="Company name">
       <ng-container *ngIf="registerFormGroup.get('username')?.touched && registerFormGroup.get('username')?.invalid">
-        <p class="error" *ngIf="registerFormGroup.get('username')?.errors?.['required']" > Company name is necessary! Minimum 3 characters! </p>
+        <p class="error">Username must be minimum 3 characters!</p>
       </ng-container>
+      
+
       <input formControlName="logo" type="logo" name="logo" placeholder="Logo">
 
       <input formControlName="companyInfo" type="companyInfo" name="companyInfo" placeholder="Company Information">

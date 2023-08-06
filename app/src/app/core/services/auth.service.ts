@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IUser } from '../interfaces/IUser';
 import { environment } from 'src/environments/environment';
 import { tap } from 'rxjs';
-import { getUserData } from 'src/app/auth/util';
+import { clearUserData, getUserData } from 'src/app/auth/util';
 
 const apiUrl = environment.apiUrl;
 
@@ -35,9 +35,14 @@ export class AuthService {
       if (!response._id) { return }
   }))
   }
+  
   logout() { 
-    return this.httpClient.get(`${environment.apiUrl}/users/logout`)
+    if(!getUserData()){return}
+    clearUserData()
+    this.setLoginInfo(null, false)
+    
   }
+
 
   getProfile() {
     const token = getUserData().accessToken

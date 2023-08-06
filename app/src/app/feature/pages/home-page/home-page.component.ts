@@ -9,9 +9,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class HomePageComponent implements OnInit {
 
   constructor( private authService: AuthService) { }
+
   ngOnInit(): void {
-    if (getUserData().accessToken) {
+    if (getUserData()) {
       this.authService.isLogged = true;
     }
   }
+
 }

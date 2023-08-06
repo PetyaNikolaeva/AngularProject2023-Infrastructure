@@ -1,10 +1,10 @@
 export interface IUser {
     _id: string,
-    username: string,
     email: string,
-    accessToken: string,
+    username: string,
     logo: string,
     companyInfo: string,
+    accessToken: string,
 }
 
 //_creationDate: string,

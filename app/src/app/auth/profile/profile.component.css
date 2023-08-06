@@ -6,11 +6,126 @@
    font-family: 'Barlow', sans-serif;
    margin: 0;
    text-align: center;
+   color: #9db52a;
+   text-shadow: 1px 1px 1px black;
    padding: 30px;
    font-size: 50px;
+   font-weight: 300;
+   padding-block: 40px;
+   font-style: italic;
+   background: radial-gradient(circle, lightgray, #4d565a);
 }
 
 main {
+   border-block: 5px solid white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+background-color: #4d565a;
+}
 
-background-color: rgba(245, 245, 245, 0.871);
+.profile {
+   width: 85%;
+   height: auto;
+   background-color: lightgray;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border: 2px solid #9db52a;
+   padding-inline: 50px;
+}
+.first {
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-direction: row;
+   border-bottom: 1px solid #9db52a;
+   gap: 40px;
+}
+.second {
+   width: 80%;
+}
+.desc{
+color:#4d565a;
+   font-size: 24px;
+}
+
+.logo {
+   height: 100px;
+}
+
+.info {
+   font-size: 30px;
+   text-align: center;
+   color: #4d565a;
+}
+.content {
+   padding-block: 70px;
+}
+
+
+.my-project-card{
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 50px;
+   
+}
+
+.project-card-img{
+   width: 100%;
+   border: 3px solid lightgray;
+   box-shadow: 1px 1px 1px black;
+   height: 90vh;
+}
+.card {
+   position: relative;
+}
+
+.text{
+   border-radius: 100%;
+   height: 400px;
+   width: 400px;
+   background: rgba(0, 0, 0, 0.7);
+   position: absolute;
+   top: 50px;
+   right: 60px;
+   color: lightgray;
+   text-align: center;
+   font-size: 30px;
+   padding: 100px;
+box-shadow: 2px 2px 2px 3px white;
+   
+}
+
+.text .name {
+   border-bottom: 1px solid #9db52a;
+   color: white;
+   font-style: italic;
+}
+.projects{
+   width: 80%;
+   
+}
+
+.my-project-card-details-link{
+   color: black;
+   font-size: 18px;
+   text-decoration: none;
+}
+
+.text button{
+background-color: #9db52a;
+   margin-top: 50px;
+   padding: 10px 30px;
+   border-radius: 30px;
+}
+
+.add_project{
+   color: #4d565a;
+   transition:all 300ms;
+}
+
+.add_project:hover{
+   color: white;
 }
