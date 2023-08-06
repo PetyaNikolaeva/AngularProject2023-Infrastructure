@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/core/services/projects.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { IProjects } from 'src/app/core/interfaces/IProjects'; 
 import { getUserData } from '../util';
 import { ActivatedRoute, Router } from '@angular/router'; 
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,9 +16,10 @@ export class ProfileComponent implements OnInit{
   email: string = '';
   userId: string = '';
   companyInfo: string = '';
-  logo: string = '';
+  logo: string = ''; 
   
-  btnDisabled:  boolean = true;
+  ownerID = getUserData()._id
+  isBtnHidden:boolean = false;
 
   projects: IProjects[] =[]
   errors:  | undefined = undefined;
@@ -48,19 +51,24 @@ export class ProfileComponent implements OnInit{
       this.postsService.getUserProjects(userId).subscribe({
         next: (response) => {
           this.projects = response;
+
         },
         error: (err) => {
           this.errors = err.error.message;
         }
       });
 
-      
-      this.btnDisabled =  localStorage.getItem('btnDisabled') ==='true'
-    }
+      this.ownerID= userId
+      const isHidden = localStorage.getItem(`btnHidden${this.ownerID}`)
+      if(isHidden === 'true'){
+        this.isBtnHidden = true
+      }  
+   }
 
 
 
-    addCompanyInfo():void { 
+    addCompanyInfo():void {  
+        
       const id = this.activatedRoute.snapshot.params['id'];
          
         const username = getUserData().username
@@ -72,9 +80,13 @@ export class ProfileComponent implements OnInit{
           this.postsService.addLeader(data).subscribe((response) => {
             console.log('Post request is succesful!', response)
           })
+
+
+          this.ownerID = getUserData()._id
+
+          this.isBtnHidden = true;
+          localStorage.setItem(`btnHidden${this.ownerID}`, 'true')
   
-          localStorage.setItem('btnDisabled', 'true')
-          this.btnDisabled = true;  
     }
   }
 

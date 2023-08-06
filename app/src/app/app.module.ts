@@ -6,16 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
- 
+
 import { Router, RouterModule } from '@angular/router';
 import { PagesModule } from './feature/pages/pages.module';
 import { ProjectsModule } from './feature/projects/projects.module';
-import { LeadersComponent } from './feature/projects/leaders/leaders.component';
-//import { AppInterceptor } from './app.interceptor';
+ 
 @NgModule({
   declarations: [
-    AppComponent,
-    LeadersComponent
+    AppComponent
   ],
   imports: [
     AppRoutingModule,

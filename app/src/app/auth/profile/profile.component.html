@@ -7,9 +7,9 @@
                 <p class="desc"><i class="fa-solid fa-envelope"></i> {{email}}</p>
                 <p class="desc"><i class="fa-solid fa-user"></i> {{userId}}</p>
             </div>
-   
-            <button class="add-info-btn" (click)="addCompanyInfo()" [disabled]="btnDisabled">Add</button>
 
+            <button class="add-info-btn" (click)="addCompanyInfo()" [style.display]="isBtnHidden ? 'none' : 'block'">Add</button>
+            
 
         </div>
         <div class="second"> 

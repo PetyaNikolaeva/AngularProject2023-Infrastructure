@@ -7,7 +7,7 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { RouterModule } from '@angular/router';
 import { ProjectRoutingModule } from './projects-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { LeadersComponent } from './leaders/leaders.component';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddProjectComponent,
     ProjectListComponent, 
     ProjectListItemDetailsComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    LeadersComponent
   ],
   imports: [
     CommonModule,

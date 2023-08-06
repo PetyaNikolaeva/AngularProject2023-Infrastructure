@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { IProjects } from 'src/app/core/interfaces/IProjects';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { PostsService } from 'src/app/core/services/projects.service';
-import { ActivatedRoute, Router } from '@angular/router'; 
+import { ActivatedRoute, Router, RouterLink } from '@angular/router'; 
 import { getUserData } from 'src/app/auth/util';
+import { MatDialog } from '@angular/material/dialog'
+import { LeadersComponent } from '../leaders/leaders.component';
+
 @Component({
   selector: 'app-project-list-item-details',
   templateUrl: './project-list-item-details.component.html',
@@ -23,7 +26,8 @@ export class ProjectListItemDetailsComponent implements OnInit{
     private activatedRoute: ActivatedRoute,
     private postsService: PostsService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) { }  
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
@@ -76,9 +80,13 @@ export class ProjectListItemDetailsComponent implements OnInit{
     };
 
  
+       
+    }
+
+ 
 
   
     
-}
+
 
 
