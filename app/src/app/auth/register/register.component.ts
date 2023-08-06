@@ -42,7 +42,7 @@ export class RegisterComponent {
       next: (userData) => {
         setUserData(userData)
         this.authService.setLoginInfo(userData, true)
-        this.registerFormGroup.reset();
+        this.registerFormGroup.reset(); 
         this.router.navigate([`/home`]);
       },
       complete: () => {
@@ -55,20 +55,9 @@ export class RegisterComponent {
       }
     })
 
-   /*
-    const username = getUserData().username
-    const logo = getUserData().logo
-    const companyInfo = getUserData().companyInfo
-
-    if(username && logo && companyInfo) {
-      const data = {username: username, logo: logo, companyInfo: companyInfo}
-      this.postsService.addLeader(data).subscribe((response) => {
-        console.log('Post request is succesful!', response)
-      })
-    } else {
-      console.warn('No username!')
-    }
-  */
+  
+    
+  
   }
 
 

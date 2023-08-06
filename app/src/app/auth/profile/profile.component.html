@@ -7,8 +7,12 @@
                 <p class="desc"><i class="fa-solid fa-envelope"></i> {{email}}</p>
                 <p class="desc"><i class="fa-solid fa-user"></i> {{userId}}</p>
             </div>
+   
+            <button class="add-info-btn" (click)="addCompanyInfo()" [disabled]="btnDisabled">Add</button>
+
+
         </div>
-        <div class="second">
+        <div class="second"> 
             <h2 class="info">Company Information</h2>
             <p class="info"> {{companyInfo}}</p>
         </div>

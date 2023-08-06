@@ -1483,22 +1483,7 @@
       }, 
     },
     likes: {},
-    leaders:{
-      "1840a313-225c-546a-817a-9954d4609f7c": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        username: "G.P.GROUP", 
-        logo: "https://career.uacg.bg/wp-content/uploads/2020/05/gp-group-logo.png",
-        companyInfo: "G.P. GROUP JSC is a construction company that covers a wide range of services related to the construction and maintenance of buildings, facilities and engineering infrastructure in the field of housing, public and industrial construction. The scope of activity of the company includes research and consulting in the field of real estates, construction, design, architecture and construction works in all spheres of construction, maintenance and repairs of buildings and facilities.",
-       
-      },
-      "1840a313-225c-416a-81ca-9954e5609l7c": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a", 
-        username: "Transport Infrastructure - GBS",
-        logo: "https://gbs-bg.com/wp-content/uploads/2023/06/gbs-logo-en.svg",
-        companyInfo: "We design, reconstruct and build roads, motorways, tunnels and bridges to connect key transport networks that keep Europe moving.Our innovative work includes the award-winning three-level Lion’s Bridge and reconstructing the Bebresh Viaduct, one of the highest bridges in southeastern Europe.",
-        
-      }
-    }
+    leaders:{}
   
     
   }

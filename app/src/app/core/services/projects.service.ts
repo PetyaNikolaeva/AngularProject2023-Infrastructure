@@ -64,7 +64,12 @@ export class PostsService {
   }
 
   addLeader(data: ILeaders): Observable<ILeaders> {
-    return this.http.post<ILeaders>(`${apiUrl}/data/leaders`, data)
+    const token = getUserData().accessToken
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('X-Authorization', '' + token);
+   
+    return this.http.post<ILeaders>(`${apiUrl}/data/leaders`, data, { headers:headers })
 
   }
 

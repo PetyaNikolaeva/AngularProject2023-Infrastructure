@@ -3,6 +3,7 @@ import { PostsService } from 'src/app/core/services/projects.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { IProjects } from 'src/app/core/interfaces/IProjects'; 
 import { getUserData } from '../util';
+import { ActivatedRoute, Router } from '@angular/router'; 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,12 +15,15 @@ export class ProfileComponent implements OnInit{
   userId: string = '';
   companyInfo: string = '';
   logo: string = '';
-
   
+  btnDisabled:  boolean = true;
+
   projects: IProjects[] =[]
   errors:  | undefined = undefined;
 
-  constructor(private authService: AuthService, private postsService: PostsService) {}
+  constructor(private authService: AuthService, 
+    private postsService: PostsService,
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.authService.getProfile().subscribe({
@@ -49,6 +53,28 @@ export class ProfileComponent implements OnInit{
           this.errors = err.error.message;
         }
       });
+
+      
+      this.btnDisabled =  localStorage.getItem('btnDisabled') ==='true'
+    }
+
+
+
+    addCompanyInfo():void { 
+      const id = this.activatedRoute.snapshot.params['id'];
+         
+        const username = getUserData().username
+        const logo = getUserData().logo
+        const companyInfo = getUserData().companyInfo
+    
+         
+          const data = {ownerId: id, username: username, logo: logo, companyInfo: companyInfo}
+          this.postsService.addLeader(data).subscribe((response) => {
+            console.log('Post request is succesful!', response)
+          })
+  
+          localStorage.setItem('btnDisabled', 'true')
+          this.btnDisabled = true;  
     }
   }
 
