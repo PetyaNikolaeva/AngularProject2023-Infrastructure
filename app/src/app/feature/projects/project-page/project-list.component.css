@@ -57,9 +57,14 @@ main {
   transition:all 300ms;
 }
 
-.project-card:hover {
+.project-card:nth-of-type(odd):hover {
   box-shadow: 8px 8px 2px 1px #9db52a;
-  transform: translate(-20px, -40px)  scale(1.2);
+  transform: translate(-20px, -30px)  scale(1.1);
+}
+
+.project-card:nth-of-type(3n-1):hover {
+  box-shadow: 8px 8px 2px 1px #9db52a;
+  transform: translate(-20px, 30px) scale(1.1);;
 }
 
 .project-card .img-wrapper img {

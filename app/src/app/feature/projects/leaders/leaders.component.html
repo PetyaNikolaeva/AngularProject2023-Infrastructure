@@ -1,14 +1,30 @@
-<main>
+<main [@ComeFromLeft]>
     <section class="project-section">
-        
-        <article class="project-card" *ngFor="let leader of leaders">
-            <div class="img-wrapper">
-                <img src={{leader?.logo}} class="project-card-img">
-            </div>
+        <ng-container *ngIf="leaders">
+            <article class="project-card" *ngFor="let leader of leaders">
+                <div class="img-wrapper">
+                    <img src={{leader?.logo}} class="project-card-img">
+                </div>
+                <div class="content">
+                    <span class="project-card-contractor"><strong>{{leader?.username}}</strong></span>
+                    <p class="project-card-name">{{leader?.companyInfo}}</p>
+
+                </div>
+            </article>
+        </ng-container>
+        <article *ngIf="leaders && leaders.length == 0">
+            <div class="no_info"></div>
             <div class="content">
-                <p class="project-card-name">{{leader?.companyInfo}}</p>
-                <span class="project-card-contractor"><strong>{{leader?.username}}</strong></span>
+                <p class="no_info_text">No information about companies!</p>
+               <img class="img_info" src="https://th.bing.com/th/id/R.c29e8a8dcedb2663f9d5d00629a2f6b3?rik=QfztK7a4iaTO3g&riu=http%3a%2f%2fgetdrawings.com%2ffree-icon-bw%2fcivil-engineering-icon-16.png&ehk=XuzXcy8RDb1LUu0zqOhzT%2bp1I26MTokJD%2fMMfdcQRaA%3d&risl=&pid=ImgRaw&r=0" alt="">  
+              <!--<img class="img_info" src="https://media.istockphoto.com/id/968080928/vector/engineer-boy-holding-paper-plans.jpg?s=612x612&w=0&k=20&c=Uee0euwkSUlzT8CwIzVIOFmsHYVLsWzP9nSPNSgZwEM=" alt=""> -->
+                <a class="no_info_text link" [routerLink]="['/home']">BACK <i class="fa-solid fa-arrow-right" style="color: #0d0c0d;"></i></a>
             </div>
+
+        </article>
+        <article class="img__last">
+
         </article>
     </section>
+
 </main>

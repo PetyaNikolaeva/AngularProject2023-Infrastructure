@@ -6,15 +6,11 @@ import { trigger,transition, style, animate, animation } from '@angular/animatio
   templateUrl: './news-page.component.html',
   styleUrls: ['./news-page.component.css'],
   animations: [
-    trigger('fadeInOutAnimation',[
+    trigger('ComeFromLeft',[
       transition(':enter',[
-        style({opacity:0}),
-        animate('1000ms', style({opacity:1}))
-      ]),
-      transition(':leave',[
-        style({opacity:0}),
-        animate('1000ms', style({opacity:0}))
-      ])
+        style({transform: 'translateX(-100%)'}),
+        animate('500ms ease-in', style({transform: 'translateX(0%)'}))
+      ]) 
     ])
 
   ]

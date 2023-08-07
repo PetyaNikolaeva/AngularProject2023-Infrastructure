@@ -4,12 +4,21 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { IProjects } from 'src/app/core/interfaces/IProjects'; 
 import { getUserData } from '../util';
 import { ActivatedRoute, Router } from '@angular/router'; 
+import { trigger,transition, style, animate, animation } from '@angular/animations'
 
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  animations: [
+    trigger('ComeFromLeft',[
+      transition(':enter',[
+        style({transform: 'translateX(-100%)'}),
+        animate('500ms ease-in', style({transform: 'translateX(0%)'}))
+      ]) 
+    ])
+  ]
 })
 export class ProfileComponent implements OnInit{
   username: string = '';

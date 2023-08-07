@@ -1,5 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://use.fontawesome.com/releases/v6.4.0/css/all.css");
+
 main {
     display: flex;
     flex-direction: column;
+    padding: 30px;
     
+    
+}
+.project-card:nth-of-type(odd) {
+    margin-top: 50px;
+    border-block: 1px solid #9db52a;
+    padding-inline: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.project-card:nth-of-type(odd) .img-wrapper  {
+    flex-basis: 30%;
+    width: 800px;
+    height: 400px;
+    
+    transform: skewX(30deg) ;
+    background: linear-gradient(90deg, white, #9db52a);
+    position: relative;
+ 
+}
+
+.project-card:nth-of-type(odd) .project-card-img {
+   padding-top: 120px;
+   position: absolute;
+   width: 400px;
+   height: 200px;
+
+}
+
+.project-card:nth-of-type(odd) .content {
+    font-family: 'Cormorant Garamond', sans-serif;
+    flex-basis: 70%;
+    padding-left: 100px;
+    font-size: 26px;
+    text-align: right;
+}
+
+.project-card-contractor {
+    font-size: 50px;
+    letter-spacing: 5px; 
+}
+
+.img__last {
+    margin-block: 50px;
+    height:200px;
+    background-size: auto;
+    background-position: center;
+    background-image: url("https://waba.org/wp-content/uploads/2020/03/Florida-Ave-NE-PBL-rendering.png");
+}
+
+.project-card:nth-of-type(even) {
+    margin-top: 50px;
+    border-block: 1px solid #9db52a;
+    padding-inline: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.project-card:nth-of-type(even) .img-wrapper  {
+    flex-basis: 30%;
+    width: 800px;
+    height: 400px;
+    transform: skewX(30deg) ;
+    background: linear-gradient(90deg, #9db52a, white);
+    position: relative;
+ 
+}
+
+.project-card:nth-of-type(even) .project-card-img {
+   padding-top: 30px;
+   position: absolute;
+   padding-left: 50px;
+   width: 500px;
+   height: 360px;
+
+}
+
+.project-card:nth-of-type(even) .content {
+    font-family: 'Cormorant Garamond', sans-serif;
+    flex-basis: 70%;
+    padding-right: 100px;
+    font-size: 26px;
+}
+
+.no_info{
+    margin-left: 300px;
+    height: 50vh;
+    width: 70vw;
+    transform: skewX(30deg);
+    border-style: none;
+    
+     position: relative;
+    background: linear-gradient(270deg, white 60%, #9db52a)
+}
+
+.content {
+    position: absolute;
+    top: 36%;
+    left: 30%;
+}
+
+.img_info{
+    position: absolute;
+    top: 0%;
+    left: 120%;
+    width: 180px;
+    height: 200px;
+}
+.no_info_text{
+    font-family: 'Cormorant Garamond', sans-serif;
+    letter-spacing: 3px;
+    padding-bottom: 100px;
+    font-size: 34px;
+}
+
+.link {
+    margin-left: 100px;
+    text-decoration: none;
+    background-color: white; 
+    color: black;
+    border: 1px solid #9db52a;
+    padding: 10px 30px;
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 60px;
 }

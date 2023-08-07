@@ -5,7 +5,7 @@
     </form>
 
     <ng-container *ngIf="!hasSearch"> 
-    <section class="project-section">
+    <section [@ComeFromLeft] class="project-section">
         <ng-container *ngIf="projects">
         <article class="project-card" *ngFor="let project of projects">
             <div class="img-wrapper">
@@ -27,7 +27,7 @@
 
 
 <ng-container *ngIf="hasSearch"> 
-    <section class="project-section">
+    <section [@ComeFromLeft] class="project-section">
         <ng-container *ngIf="searchProject">
         <article class="project-card" *ngFor="let project of searchProject">
             <div class="img-wrapper">

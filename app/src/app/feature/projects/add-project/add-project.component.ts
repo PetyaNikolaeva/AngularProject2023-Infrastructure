@@ -1,12 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {  FormGroup, FormControl, Validators, FormBuilder  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostsService } from 'src/app/core/services/projects.service';
+import { trigger,transition, style, animate } from '@angular/animations'
 
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.css']
+  styleUrls: ['./add-project.component.css'],
+  animations: [
+    trigger('ComeFromLeft',[
+      transition(':enter',[
+        style({transform: 'translateX(-100%)'}),
+        animate('500ms ease-in', style({transform: 'translateX(0%)'}))
+      ]) 
+    ])
+  ]
 })
 export class AddProjectComponent {
 

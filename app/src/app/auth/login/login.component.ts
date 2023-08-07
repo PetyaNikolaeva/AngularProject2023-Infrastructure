@@ -3,11 +3,19 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { AuthService } from 'src/app/core/services/auth.service';
 import { setUserData, clearUserData } from '../util';
-
+import { trigger,transition, style, animate} from '@angular/animations'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    trigger('fadeInOut',[
+      transition(':enter',[
+        style({opacity:0.5}),
+        animate('1000ms', style({opacity:1}))
+      ])
+    ])
+  ]
 })
 export class LoginComponent  {
 

@@ -4,12 +4,22 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { passwordMatch } from '../passwordMatch';
 import { PostsService } from 'src/app/core/services/projects.service';
-import { ILeaders } from 'src/app/core/interfaces/ILeaders';
-import { getUserData, setUserData } from '../util';
+import { setUserData } from '../util';
+import { trigger,transition, style, animate} from '@angular/animations'
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  animations: [
+    trigger('fadeInOut',[
+      transition(':enter',[
+        style({opacity:0.5}),
+        animate('1000ms', style({opacity:1}))
+      ])
+    ])
+  ]
 })
 export class RegisterComponent {
     

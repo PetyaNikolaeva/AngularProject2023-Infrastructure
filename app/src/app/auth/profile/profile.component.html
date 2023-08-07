@@ -1,26 +1,24 @@
 <main>
-    <span> <h1 class="title">{{username}}</h1></span>
-    <section class="profile">
+     <h1 class="title">{{username}}</h1>
+    <section [@ComeFromLeft] class="profile">
         <div class="first">
             <img class="logo" src="{{logo}}" alt="">
             <div class="content">
-                <p class="desc"><i class="fa-solid fa-envelope"></i> {{email}}</p>
-                <p class="desc"><i class="fa-solid fa-user"></i> {{userId}}</p>
+                <p class="desc"><i class="fa-solid fa-envelope"></i> Email: {{email}}</p>
+                <p class="desc"><i class="fa-solid fa-user"></i> UserId: {{userId}}</p>
             </div>
-
-            <button class="add-info-btn" (click)="addCompanyInfo()" [style.display]="isBtnHidden ? 'none' : 'block'">Add</button>
-            
 
         </div>
         <div class="second"> 
             <h2 class="info">Company Information</h2>
             <p class="info"> {{companyInfo}}</p>
+            <button class="add-info-btn" (click)="addCompanyInfo()" [style.display]="isBtnHidden ? 'none' : 'block'">Add company information</button>
         </div>
     </section>
-    <section class="projects">
+    <section [@ComeFromLeft] class="projects">
         <ng-container *ngIf="projects && projects.length !== 0">
             <section class="my-project">
-                <h2 class="title">MY PROJECTS</h2>
+                <h2 class="title small">MY PROJECTS</h2>
                 <div class="my-project-card" *ngFor="let project of projects">
                     <div class="card"> 
                     <img src={{project.imageUrl1}} class="project-card-img">
@@ -38,7 +36,7 @@
             </section>
         </ng-container>
 
-        <div *ngIf="projects && projects.length == 0">
+        <div [@ComeFromLeft] *ngIf="projects && projects.length == 0">
             <p class="title">ADD YOUR PROJECTS <a class="add_project" [routerLink]="['/add-project']">HERE</a></p>
         </div>
     </section>

@@ -2,15 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { IProjects } from 'src/app/core/interfaces/IProjects';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { PostsService } from 'src/app/core/services/projects.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router'; 
-import { getUserData } from 'src/app/auth/util';
-import { MatDialog } from '@angular/material/dialog'
-import { LeadersComponent } from '../leaders/leaders.component';
+import { ActivatedRoute, Router } from '@angular/router'; 
+import { getUserData } from 'src/app/auth/util'; 
+import { trigger,transition, style, animate } from '@angular/animations'
 
 @Component({
   selector: 'app-project-list-item-details',
   templateUrl: './project-list-item-details.component.html',
-  styleUrls: ['./project-list-item-details.component.css']
+  styleUrls: ['./project-list-item-details.component.css'],
+  animations: [
+    trigger('ComeFromLeft',[
+      transition(':enter',[
+        style({transform: 'translateX(-100%)'}),
+        animate('500ms ease-in', style({transform: 'translateX(0%)'}))
+      ]) 
+    ])
+  ]
 })
 export class ProjectListItemDetailsComponent implements OnInit{
 
@@ -26,8 +33,7 @@ export class ProjectListItemDetailsComponent implements OnInit{
     private activatedRoute: ActivatedRoute,
     private postsService: PostsService,
     private authService: AuthService,
-    private router: Router,
-    private dialog: MatDialog
+    private router: Router 
   ) { }  
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];

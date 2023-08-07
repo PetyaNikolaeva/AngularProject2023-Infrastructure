@@ -3,11 +3,20 @@ import { FormGroup, FormControl, FormBuilder, Form } from '@angular/forms';
 import { IProjects } from 'src/app/core/interfaces/IProjects';
 import { PostsService } from 'src/app/core/services/projects.service';
 import { Router } from '@angular/router';
+import { trigger,transition, style, animate, animation } from '@angular/animations'
 
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styleUrls: ['./project-list.component.css']
+  styleUrls: ['./project-list.component.css'],
+  animations: [
+    trigger('ComeFromLeft',[
+      transition(':enter',[
+        style({transform: 'translateX(-100%)'}),
+        animate('500ms ease-in', style({transform: 'translateX(0%)'}))
+      ]) 
+    ])
+  ]
 })
 export class ProjectListComponent implements OnInit{ 
   projects: IProjects[] | null = null;
