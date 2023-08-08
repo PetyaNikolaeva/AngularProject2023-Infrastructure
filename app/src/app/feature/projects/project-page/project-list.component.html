@@ -41,8 +41,9 @@
             </div>
         </article>
     </ng-container>
-        <div *ngIf="searchProject && searchProject.length == 0">
-            <p class="title">No projects in that location <a [routerLink]="['/add-project']">Add projects here</a></p>
+        <div class="search" *ngIf="searchProject && searchProject.length == 0">
+            <p class="search_title">No projects in that location</p>
+                <p class="search_title">Add your projects <i class="fa-solid fa-arrow-right"></i><a class="search_link" [routerLink]="['/add-project']">  HERE</a></p>
         </div>
     </section>
 </ng-container>

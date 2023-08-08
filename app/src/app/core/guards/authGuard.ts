@@ -18,9 +18,9 @@ export class AuthGuard implements CanActivate {
   ): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
       const isAuthenticated = this.authService.isLogged
       const redirectUser = () => this.router.navigate(['/home']);
-  
+      const redirectUserLogin = () => this.router.navigate(['/login']);
       switch (state.url) {
-          case '/profile': if (!isAuthenticated) redirectUser();
+          case '/profile': if (!isAuthenticated) redirectUserLogin();
               break;
   
           case '/login': if (isAuthenticated) redirectUser();
@@ -33,7 +33,7 @@ export class AuthGuard implements CanActivate {
           case '/logout': if (!isAuthenticated) redirectUser();
               break;
   
-          case '/add-project': if (!isAuthenticated) redirectUser();
+          case '/add-project': if (!isAuthenticated) redirectUserLogin();
               break;
               
 

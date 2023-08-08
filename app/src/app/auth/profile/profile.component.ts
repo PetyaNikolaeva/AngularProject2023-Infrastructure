@@ -35,7 +35,8 @@ export class ProfileComponent implements OnInit{
 
   constructor(private authService: AuthService, 
     private postsService: PostsService,
-    private activatedRoute: ActivatedRoute) {}
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.authService.getProfile().subscribe({
@@ -92,10 +93,9 @@ export class ProfileComponent implements OnInit{
 
 
           this.ownerID = getUserData()._id
-
           this.isBtnHidden = true;
           localStorage.setItem(`btnHidden${this.ownerID}`, 'true')
-  
+          this.router.navigate([`/leaders`]);
     }
   }
 

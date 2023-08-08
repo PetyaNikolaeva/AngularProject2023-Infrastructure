@@ -32,10 +32,11 @@ main {
 }
 
 .project-card:nth-of-type(odd) .project-card-img {
-   padding-top: 120px;
+    padding-block: 60px;
    position: absolute;
-   width: 400px;
-   height: 200px;
+   padding-left: 60px;
+   width: 480px;
+   height: 260px;
 
 }
 
@@ -82,11 +83,11 @@ main {
 }
 
 .project-card:nth-of-type(even) .project-card-img {
-   padding-top: 30px;
+   padding-block: 50px;
    position: absolute;
    padding-left: 50px;
-   width: 500px;
-   height: 360px;
+   width: 480px;
+   height: 260px;
 
 }
 
@@ -97,7 +98,7 @@ main {
     font-size: 26px;
 }
 
-.no_info{
+.info_article .no_info{
     margin-left: 300px;
     height: 50vh;
     width: 70vw;
@@ -108,27 +109,27 @@ main {
     background: linear-gradient(270deg, white 60%, #9db52a)
 }
 
-.content {
+.info_article .content {
     position: absolute;
     top: 36%;
     left: 30%;
 }
 
-.img_info{
+.info_article .img_info{
     position: absolute;
     top: 0%;
     left: 120%;
     width: 180px;
     height: 200px;
 }
-.no_info_text{
+ .info_article .no_info_text{
     font-family: 'Cormorant Garamond', sans-serif;
     letter-spacing: 3px;
     padding-bottom: 100px;
     font-size: 34px;
 }
 
-.link {
+.info_article .link {
     margin-left: 100px;
     text-decoration: none;
     background-color: white; 

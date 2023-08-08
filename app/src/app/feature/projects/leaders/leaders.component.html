@@ -12,7 +12,7 @@
                 </div>
             </article>
         </ng-container>
-        <article *ngIf="leaders && leaders.length == 0">
+        <article class="info_article" *ngIf="leaders && leaders.length == 0">
             <div class="no_info"></div>
             <div class="content">
                 <p class="no_info_text">No information about companies!</p>
@@ -22,9 +22,9 @@
             </div>
 
         </article>
-        <article class="img__last">
+        <div class="img__last">
 
-        </article>
+        </div>
     </section>
 
 </main>
