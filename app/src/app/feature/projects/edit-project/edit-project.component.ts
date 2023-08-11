@@ -55,7 +55,7 @@ export class EditProjectComponent {
    this.postsService.editProject(id, this.editFormGroup.value).subscribe({
      next: (project) => {
        console.log(project)
-       //this.router.navigate([`/projects/${project._id}`])
+       this.router.navigate([`/projects/details/${id}`])
      },
      error: (err) => {
        this.errors = err.error.message;

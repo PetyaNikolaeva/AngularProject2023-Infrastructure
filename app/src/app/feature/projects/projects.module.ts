@@ -5,8 +5,7 @@ import { ProjectListComponent } from './project-page/project-list.component';
 import { ProjectListItemDetailsComponent } from './project-list-item-details/project-list-item-details.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 import { RouterModule } from '@angular/router'; 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LeadersComponent } from './leaders/leaders.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { ProjectRoutingModule } from './projects-routing.module';
 
 
@@ -15,8 +14,7 @@ import { ProjectRoutingModule } from './projects-routing.module';
     AddProjectComponent,
     ProjectListComponent, 
     ProjectListItemDetailsComponent,
-    EditProjectComponent,
-    LeadersComponent
+    EditProjectComponent 
   ],
   imports: [
     CommonModule, 

@@ -40,7 +40,7 @@ export class ProjectListItemDetailsComponent implements OnInit{
 
       this.postsService.getDetails(id).subscribe((project) => {
         this.project = project
-        if (this.project._ownerId === getUserData()._id) {
+        if (this.project._ownerId === getUserData()?._id) {
           this.isOwner = true;
         }
         ;});
