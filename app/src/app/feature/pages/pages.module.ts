@@ -6,13 +6,16 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { LeadersComponent } from './leaders/leaders.component';
 import { PagesRoutingModule } from './pages-routing.module';
+import { NotFoundError } from 'rxjs';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     HomePageComponent,
     NewsPageComponent,
-    LeadersComponent
+    LeadersComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

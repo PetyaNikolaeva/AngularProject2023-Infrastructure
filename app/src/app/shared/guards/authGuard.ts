@@ -26,15 +26,16 @@ export class AuthGuard implements CanActivate {
           case '/login': if (isAuthenticated) redirectUser();
               break;
   
-  
           case '/register': if (isAuthenticated) redirectUser();
               break;
   
           case '/logout': if (!isAuthenticated) redirectUser();
               break;
   
-          case '/add-project': if (!isAuthenticated) redirectUserLogin();
+          case '/projects/add-project': if (!isAuthenticated) redirectUserLogin();
               break;
+            case `/projects/edit/${route.params['id']}`:if (!isAuthenticated) redirectUserLogin();
+            break;
               
 
       }

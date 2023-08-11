@@ -46,7 +46,7 @@
 
         <ng-container *ngIf="isOwner">
             <div class="edit-delete">
-                <button class="edit-delete-btn" [routerLink]="['/edit', project._id]">Edit</button>
+                <button class="edit-delete-btn" [routerLink]="['/projects/edit', project._id]">Edit</button>
                 <button class="edit-delete-btn" (click)="deleteProject()">Delete</button>
             </div>
         </ng-container>

@@ -6,18 +6,14 @@ import { PostsService } from './services/projects.service';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [], 
   imports: [
     CommonModule
-  ] 
+  ], 
+  providers: [
+    AuthService,
+    PostsService
+  ],
 })
 export class SharedModule { 
-  static forRoot(): ModuleWithProviders<SharedModule> {
-  return {
-    ngModule: SharedModule,
-    providers: [
-      AuthService,
-      PostsService
-    ]
-  }
-}}
+}
