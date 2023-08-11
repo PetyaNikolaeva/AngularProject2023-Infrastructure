@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PostsService } from 'src/app/core/services/projects.service';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { IProjects } from 'src/app/core/interfaces/IProjects'; 
+import { Component, OnInit } from '@angular/core';
+import { PostsService } from 'src/app/shared/services/projects.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { IProjects } from 'src/app/shared/interfaces/IProjects';
 import { getUserData } from '../util';
 import { ActivatedRoute, Router } from '@angular/router'; 
-import { trigger,transition, style, animate, animation } from '@angular/animations'
+import { trigger,transition, style, animate } from '@angular/animations'
 
 
 @Component({

@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { Router, RouterModule } from '@angular/router';
 import { PagesModule } from './feature/pages/pages.module';
 import { ProjectsModule } from './feature/projects/projects.module';
+import { SharedModule } from './shared/shared.module';
  
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProjectsModule } from './feature/projects/projects.module';
     HttpClientModule, 
     AuthModule,
     ProjectsModule,
-    PagesModule
+    PagesModule,
+    SharedModule
     
   ],
   providers: [],

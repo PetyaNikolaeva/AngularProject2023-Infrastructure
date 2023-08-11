@@ -4,10 +4,10 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectListComponent } from './project-page/project-list.component';
 import { ProjectListItemDetailsComponent } from './project-list-item-details/project-list-item-details.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
-import { RouterModule } from '@angular/router';
-import { ProjectRoutingModule } from './projects-routing.module';
+import { RouterModule } from '@angular/router'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeadersComponent } from './leaders/leaders.component';
+import { ProjectRoutingModule } from './projects-routing.module';
 
 
 @NgModule({
@@ -19,11 +19,11 @@ import { LeadersComponent } from './leaders/leaders.component';
     LeadersComponent
   ],
   imports: [
-    CommonModule,
-    ProjectRoutingModule,
+    CommonModule, 
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProjectRoutingModule
 
   ]
 })

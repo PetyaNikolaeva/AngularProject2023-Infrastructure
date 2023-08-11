@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getUserData } from 'src/app/auth/util';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

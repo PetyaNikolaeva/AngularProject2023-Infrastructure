@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { passwordMatch } from '../passwordMatch';
-import { PostsService } from 'src/app/core/services/projects.service';
 import { setUserData } from '../util';
 import { trigger,transition, style, animate} from '@angular/animations'
 
@@ -40,8 +39,7 @@ export class RegisterComponent {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private formBuilder: FormBuilder,
-    private postsService: PostsService) { }
+    private formBuilder: FormBuilder) { }
 
   errors: string | undefined = undefined
   hasSameEmail:boolean = false;

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Form } from '@angular/forms';
-import { IProjects } from 'src/app/core/interfaces/IProjects';
-import { PostsService } from 'src/app/core/services/projects.service';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { IProjects } from 'src/app/shared/interfaces/IProjects';
+import { PostsService } from 'src/app/shared/services/projects.service';
 import { Router } from '@angular/router';
-import { trigger,transition, style, animate, animation } from '@angular/animations'
+import { trigger,transition, style, animate } from '@angular/animations'
 
 @Component({
   selector: 'app-project-list',
@@ -33,8 +33,7 @@ export class ProjectListComponent implements OnInit{
     private router: Router
     ) { }
 
- searchHandler() {
-  const { search } = this.searchFormGroup.value
+ searchHandler() { 
     const  string  = this.searchFormGroup.value 
     this.hasSearch = true
     this.searchProject = []

@@ -1,4 +1,4 @@
-import { IUser } from "../core/interfaces/IUser";
+import { IUser } from "../shared/interfaces/IUser";
 
 export const setUserData = ({ _id, username, email, accessToken,logo, companyInfo }: IUser) => {
 // запазваме

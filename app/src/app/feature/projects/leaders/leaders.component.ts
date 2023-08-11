@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ILeaders } from 'src/app/core/interfaces/ILeaders';
-import { PostsService } from 'src/app/core/services/projects.service';
-import { trigger,transition, style, animate, animation } from '@angular/animations'
+import { ILeaders } from 'src/app/shared/interfaces/ILeaders';
+import { PostsService } from 'src/app/shared/services/projects.service';
+import { trigger,transition, style, animate  } from '@angular/animations'
 
 @Component({
   selector: 'app-leaders',

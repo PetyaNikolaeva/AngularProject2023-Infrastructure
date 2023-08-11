@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IProjects } from 'src/app/core/interfaces/IProjects';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { PostsService } from 'src/app/core/services/projects.service';
+import { IProjects } from 'src/app/shared/interfaces/IProjects';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { PostsService } from 'src/app/shared/services/projects.service';
 import { ActivatedRoute, Router } from '@angular/router'; 
 import { getUserData } from 'src/app/auth/util'; 
 import { trigger,transition, style, animate } from '@angular/animations'

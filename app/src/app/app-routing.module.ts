@@ -1,8 +1,8 @@
-import { importProvidersFrom, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './feature/pages/home-page/home-page.component';
 import { NewsPageComponent } from './feature/pages/news-page/news-page.component';
-import { AuthGuard } from './core/guards/authGuard';
+
 
 const routes: Routes = [
   {
@@ -21,6 +21,10 @@ const routes: Routes = [
 {
   path: 'projects',
   loadChildren: () => import('./feature/projects/projects.module').then(m => m.ProjectsModule),
+},
+{
+  path: 'auth',
+  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
 },
 ];
 
