@@ -1,9 +1,8 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { PostsService } from './services/projects.service';
-
-
+ 
 
 @NgModule({
   declarations: [], 
@@ -12,7 +11,8 @@ import { PostsService } from './services/projects.service';
   ], 
   providers: [
     AuthService,
-    PostsService
+    PostsService,
+    
   ],
 })
 export class SharedModule { 

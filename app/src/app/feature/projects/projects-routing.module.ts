@@ -16,17 +16,17 @@ const routes:Routes = [
     },
 
     {
-        path:"details/:id",
+        path:"projects/details/:id",
         component: ProjectListItemDetailsComponent
     },
     {
         canActivate: [AuthGuard],
-        path:"edit/:id",
+        path:"projects/edit/:id",
         component: EditProjectComponent
     },
     {
         canActivate: [AuthGuard],
-        path:"add-project",
+        path:"projects/add-project",
         component: AddProjectComponent
     }
 

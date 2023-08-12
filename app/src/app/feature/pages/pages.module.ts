@@ -5,8 +5,7 @@ import { NewsPageComponent } from './news-page/news-page.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { LeadersComponent } from './leaders/leaders.component';
-import { PagesRoutingModule } from './pages-routing.module';
-import { NotFoundError } from 'rxjs';
+import { PagesRoutingModule } from './pages-routing.module'; 
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
